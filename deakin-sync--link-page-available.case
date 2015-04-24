@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>deakin-sync--link-page-available</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">deakin-sync--link-page-available</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: Deakin Sync-->
+<!--TEST CASE: Tests DeakinSync staff login page in Squiz Matrix-->
+<!--TEST IDs: DS01-->
+<!---->
+<!--These tests will be run in the following domain: -->
+<tr>
+	<td>store</td>
+	<td>www-cms-uat.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/site-admin/squiz-matrix-for-staff</td>
+	<td>target_page</td>
+</tr>
+<!---->
+<!--################-->
+<!---->
+<!---->
+<!--# TEST ID: DS01-->
+<!--Check the page is available-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${target_page}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>Squiz Matrix for Staff</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h2</td>
+	<td>Instructions to login to Squiz Matrix</td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>LDAP User groups and Permissions</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LDAP User groups and Permissions</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: Basic Content Authoring-->
+<!--TEST CASE: Tests that restricted plugins not available in the WYSIWYG editor-->
+<!--TEST IDs: BA01-->
+<!---->
+<!--These tests will be run in the following domain: -->
+<tr>
+	<td>store</td>
+	<td>www-cms-uat.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=1092&amp;asset_ei_screen=contents&amp;SQ_BACKEND_PAGE=main&amp;sq_link_path=70%2C72%2C1601&amp;sq_asset_path=69%2C71%2C1091</td>
+	<td>edit_screen</td>
+</tr>
+<!---->
+<!--################-->
+<!---->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${edit_screen}</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: BA01-->
+<!--Check the plugins and tools-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@id='']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>//input[@id='']</td>
+	<td>Release Lock(s)</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>sq_main</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>css=#bodycopy_1092_content_type_wysiwyg_1604_contents_div_viper</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.Viper-buttonIcon.Viper-justifyLeft</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAt</td>
+	<td>css=span.Viper-buttonIcon.Viper-headings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=MatrixViper-ViperFormatPlugin:vtp:heading:h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=MatrixViper-ViperFormatPlugin:vtp:heading:h2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=MatrixViper-ViperFormatPlugin:vtp:heading:h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=MatrixViper-ViperFormatPlugin:vtp:heading:h4</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=MatrixViper-ViperFormatPlugin:vtp:heading:h5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=MatrixViper-ViperFormatPlugin:vtp:heading:h6</td>
+	<td></td>
+</tr>
+<!---->
+<!--Release the lock-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@id='']</td>
+	<td></td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

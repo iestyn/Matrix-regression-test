@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>deakin-sync--integration-service</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">deakin-sync--integration-service</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: Deakin Sync-->
+<!--TEST CASE: Tests the DeakinSync SOAP service is operational-->
+<!--TEST IDs: DS02, DS03-->
+<!---->
+<!--These tests will be run in the following domain: -->
+<tr>
+	<td>store</td>
+	<td>www-cms-uat.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/site-admin/squiz-matrix-for-staff/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=81393&amp;sq_asset_path=59,81393&amp;sq_link_path=59,154392&amp;asset_ei_screen=details</td>
+	<td>service_link</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/site-admin/squiz-matrix-for-staff/deakinsync-soap-service-status/_nocache</td>
+	<td>status_page_link</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/_web_services/oneview-content-server?wsdl</td>
+	<td>wsdl_link</td>
+</tr>
+<!---->
+<!--################-->
+<!---->
+<!---->
+<!--# TEST ID: DS02-->
+<!--Check the page is available-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${service_link}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>sq_main</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>OneView-content-server</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='backend_section_7']/tbody/tr[2]/td/table/tbody/tr/td[2]</td>
+	<td>OneView-content-server</td>
+</tr>
+<!---->
+<!--Check the WSDL doc is available-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${wsdl_link}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//wsdl:definitions</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: DS03-->
+<!--Check the SOAP service is available-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${status_page_link}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTitle</td>
+	<td>DeakinSync SOAP Service Status</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.content &gt; p</td>
+	<td>Service Status: Good</td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+
+</tbody></table>
+</body>
+</html>

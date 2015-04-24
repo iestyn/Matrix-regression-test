@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>ldap-performance--caching-configuration</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ldap-performance--caching-configuration</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: LDAP Performance-->
+<!--TEST CASE: Tests the LDAP caching-->
+<!--TEST IDs: LC01-->
+<!---->
+<!--These tests will be run in the following domain: -->
+<tr>
+	<td>store</td>
+	<td>www-cms-uat.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=3055&amp;sq_asset_path=2,15,66,3055&amp;sq_link_path=2,15,67,4828&amp;asset_ei_screen=details</td>
+	<td>config_screen</td>
+</tr>
+<!---->
+<!--################-->
+<!---->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${config_screen}</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: LC01-->
+<!--Check LDAP caching is on-->
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='backend_section_9']/tbody/tr[2]/td/table/tbody/tr/td[2]</td>
+	<td>On*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='backend_section_9']/tbody/tr[2]/td/table/tbody/tr[2]/td[2]</td>
+	<td>86400*</td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+
+</tbody></table>
+</body>
+</html>

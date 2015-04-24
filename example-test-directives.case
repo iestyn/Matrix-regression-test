@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>Example-test-directives</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Example-test-directives</td></tr>
+</thead><tbody>
+<!--################-->
+<!--Edit latency tests -->
+<!---->
+<!--These tests will be run in the following domain:-->
+<tr>
+	<td>store</td>
+	<td>www-cms-dev.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<!---->
+<!--Page to perform the test on-->
+<tr>
+	<td>store</td>
+	<td>/study-at-deakin/find-a-course/criminology</td>
+	<td>test_url</td>
+</tr>
+<!---->
+<!--################-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<!---->
+<!--Load latency-->
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startTime</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${test_url}/_edit#mode=edit&amp;screen=content</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>pageLoadTime</td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>location</td>
+	<td></td>
+</tr>
+<!---->
+<!--Initiate safe edit latency-->
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startSafeEditTime</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_safeEditButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>safeEditLoadTime</td>
+</tr>
+<!---->
+<!--Basic edit latency - add some text and save-->
+<tr>
+	<td>waitForVisible</td>
+	<td>//div[@id='ees_screenContent']/div/div/div[5]/div/div/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='ees_screenContent']/div/div/div[5]/div/div/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=229993</td>
+	<td>Introductions</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startTime</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>pageSaveTime</td>
+</tr>
+<!---->
+<!--Approve and publish latency-->
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=page_standard_46429_change_status</td>
+	<td>label=Approve</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startTime</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>pageApproveTime</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=page_standard_46429_change_status</td>
+	<td>label=Make Live</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>pagePublishTime</td>
+</tr>
+<!---->
+<!--Output stats now-->
+<tr>
+	<td>echo</td>
+	<td>####################################################################</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####&nbsp;&nbsp;Content tools page (edit), ${pageLoadTime}, ${safeEditLoadTime}, ${pageSaveTime}, ${pageApproveTime}, ${pagePublishTime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####################################################################</td>
+	<td></td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+
+</tbody></table>
+</body>
+</html>

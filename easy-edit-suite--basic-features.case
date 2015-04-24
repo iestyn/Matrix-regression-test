@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>easy-edit-suite--basic-features</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">easy-edit-suite--basic-features</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: Easy Edit Suite-->
+<!--TEST CASE: Tests the basic features are available-->
+<!--TEST IDs: EE01, EE02, EE06-->
+<!---->
+<!--These tests will be run in the following domain: -->
+<tr>
+	<td>store</td>
+	<td>www-cms-uat.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page/_edit#mode=edit&amp;screen=content</td>
+	<td>edit_screen</td>
+</tr>
+<!---->
+<!--################-->
+<!---->
+<!--# TEST ID: EE01-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${edit_screen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: EE02-->
+<!--Check that the editing tabs and other tools are there-->
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.content</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.metadata</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.workflow</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.linking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.urls</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=ees_modePreview</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=ees_modeEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.icon</td>
+	<td>New</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=#ees_plusSearchButton &gt; span.icon</td>
+	<td></td>
+</tr>
+<!---->
+<!--Check that each tab is reachable-->
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h3.sectionHeading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.sectionHeading</td>
+	<td>Status</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.metadata</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h3.schemaHeading_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.schemaHeading_3</td>
+	<td>Global Schema</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.workflow</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h3.sectionHeading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.sectionHeading</td>
+	<td>Workflow Status</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.linking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h3.sectionHeading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.sectionHeading</td>
+	<td>Location Links</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.urls</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h3.sectionHeading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.sectionHeading</td>
+	<td>Web Paths</td>
+</tr>
+<!---->
+<!--# TEST ID: EE06-->
+<!--Check the accessibilty tool is available-->
+<tr>
+	<td>click</td>
+	<td>id=ees_modePreview</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=#ees_showAccessibilityOverlay &gt; span.icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#ees_showAccessibilityOverlay &gt; span.icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=div.HTMLCS-header</td>
+	<td></td>
+</tr>
+<!---->
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

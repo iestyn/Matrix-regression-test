@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>easy-edit-suite--basic-features-regular-user</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">easy-edit-suite--basic-features-regular-user</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: Easy Edit Suite-->
+<!--TEST CASE: Tests the basic features are available to a non-admin user-->
+<!--TEST IDs: EE01R, EE02R, EE06R-->
+<!---->
+<!--These tests will be run in the following domain: -->
+<tr>
+	<td>store</td>
+	<td>www-cms-uat.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page/_edit#mode=edit&amp;screen=content</td>
+	<td>edit_screen</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>crispd</td>
+	<td>regular_username</td>
+</tr>
+<!---->
+<!--################-->
+<!---->
+<!--Impersonate a regular user-->
+<tr>
+	<td>open</td>
+	<td>/_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//img[contains(@src,'https://www-cms-uat.deakin.edu.au/__lib/web/images/icons/header/login_as_white.png')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>sq_header</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user</td>
+	<td>${regular_username}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.sq-btn-blue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<!---->
+<!--# TEST ID: EE01R-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${edit_screen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: EE02R-->
+<!--Check that the editing tabs and other tools are there-->
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.content</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.metadata</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.workflow</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.linking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=span.screenType.urls</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=ees_modePreview</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=ees_modeEdit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=span.icon</td>
+	<td>New</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=#ees_plusSearchButton &gt; span.icon</td>
+	<td></td>
+</tr>
+<!---->
+<!--Check that each tab is reachable-->
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h3.sectionHeading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.sectionHeading</td>
+	<td>Status</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.metadata</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h3.schemaHeading_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.schemaHeading_3</td>
+	<td>Global Schema</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.workflow</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h3.sectionHeading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.sectionHeading</td>
+	<td>Workflow Status</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.linking</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h3.sectionHeading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.sectionHeading</td>
+	<td>Location Links</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.urls</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h3.sectionHeading</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.sectionHeading</td>
+	<td>Web Paths</td>
+</tr>
+<!---->
+<!--# TEST ID: EE06R-->
+<!--Check the accessibilty tool is available-->
+<tr>
+	<td>click</td>
+	<td>id=ees_modePreview</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=#ees_showAccessibilityOverlay &gt; span.icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#ees_showAccessibilityOverlay &gt; span.icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=div.HTMLCS-header</td>
+	<td></td>
+</tr>
+<!---->
+<!--Stop impersonating regular user-->
+<tr>
+	<td>open</td>
+	<td>/_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[contains(@src,'https://www-cms-uat.deakin.edu.au/__lib/web/images/icons/header/logout_and_resume.png')]</td>
+	<td></td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

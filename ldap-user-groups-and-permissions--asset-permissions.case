@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>ldap-user-groups-and-permissions--asset-permissions</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ldap-user-groups-and-permissions--asset-permissions</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: LDAP User groups and Permissions-->
+<!--TEST CASE: Tests the permissions setup on a typical asset-->
+<!--TEST IDs: L03-->
+<!---->
+<!--These tests will be run in the following domain: -->
+<tr>
+	<td>store</td>
+	<td>www-cms-uat.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=19523&amp;asset_ei_screen=permissions&amp;sq_link_path=70%2C72%2C33469&amp;sq_asset_path=69%2C71%2C19523</td>
+	<td>permissions_screen</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=19523&amp;asset_ei_screen=roles&amp;sq_link_path=70%2C72%2C33469&amp;sq_asset_path=69%2C71%2C19523</td>
+	<td>roles_screen</td>
+</tr>
+<!---->
+<!--################-->
+<!---->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: L03 -->
+<!--Check that different group permissions are assigned-->
+<tr>
+	<td>open</td>
+	<td>${permissions_screen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='backend_section_8']/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[2]/td/span</td>
+	<td>Learning Content Author (Id: #19548)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='backend_section_11']/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[2]/td/span</td>
+	<td>Learning Change Approver (Id: #19562)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='backend_section_11']/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[3]/td/span</td>
+	<td>Learning Web Planner (Id: #19563)</td>
+</tr>
+<!---->
+<!--# TEST ID: L04-->
+<!--Check that different Roles are assigned-->
+<tr>
+	<td>open</td>
+	<td>${roles_screen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='backend_section_4']/tbody/tr[2]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/span</td>
+	<td>Learning Web Planner (Id: #19563)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='backend_section_4']/tbody/tr[2]/td/table/tbody/tr/td[2]/table/tbody/tr[4]/td[2]/span</td>
+	<td>Public Approver (Id: #12363)</td>
+</tr>
+<!---->
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

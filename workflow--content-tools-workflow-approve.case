@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>workflow--content-tools-workflow-approve</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">workflow--content-tools-workflow-approve</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: Workflow-->
+<!--TEST CASE: Tests basic workflow approve function in Edit+-->
+<!--TEST IDs: WF08, WF09, WF10, WF11-->
+<!---->
+<!--Variables used in this test case: -->
+<tr>
+	<td>store</td>
+	<td>www-cms-uat.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page</td>
+	<td>test_asset</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{'New content tool approve test asset - ' + ((new Date()).getFullYear()+1) + '-' +&nbsp;&nbsp;((new Date()).getMonth()+1) + '-' + ((new Date()).getDate()+1)}</td>
+	<td>new_asset_name</td>
+</tr>
+<!---->
+<!--################-->
+<!---->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${test_asset}/_edit#mode=edit&amp;screen=details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: WF08-->
+<!--Create content tool page to test with-->
+<tr>
+	<td>click</td>
+	<td>css=span.icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.buttonDesc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ees_newName</td>
+	<td>${new_asset_name}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_addCurrentParent</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=span.progress-bar-inner</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=span.progress-bar-inner</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>//*[@id=&quot;ees_changeStatus&quot;]//select@id</td>
+	<td>status_select_element</td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>new_asset</td>
+	<td></td>
+</tr>
+<!---->
+<!--Add some content tools-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${new_asset}/_edit#mode=edit&amp;screen=content</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add Content Tool</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.content_section.assetToCreate &gt; span.buttonContent &gt; span.buttonDesc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add Content Tool</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=strong.buttonTitle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--Fill mandatory metadata-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${new_asset}/_edit#mode=edit&amp;screen=metadata</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=metadata_field_select_241739_default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=metadata_field_select_241739</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=metadata_field_select_241739</td>
+	<td>label=eSolutions - Digital Presence</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=option[value=&quot;Digital Presence&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=metadata_field_text_2589_default</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=metadata_field_text_2589_value</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: WF09-->
+<!--Test the page goes live correctly-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${new_asset}/_edit#mode=edit&amp;screen=details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=${status_select_element}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=${status_select_element}</td>
+	<td>label=Approve</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=${status_select_element}</td>
+	<td>label=Make Live</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+
+</tbody></table>
+</body>
+</html>

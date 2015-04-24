@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>easy-edit-suite--create-new-page</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">easy-edit-suite--create-new-page</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: Easy Edit Suite-->
+<!--TEST CASE: Tests the ability to create a new asset-->
+<!--TEST IDs: EE05-->
+<!---->
+<!--These tests will be run in the following domain: -->
+<tr>
+	<td>store</td>
+	<td>www-cms-uat.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page/_edit#mode=edit&amp;screen=content</td>
+	<td>edit_screen</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{'New asset - ' + ((new Date()).getFullYear()+1) + '-' +&nbsp;&nbsp;((new Date()).getMonth()+1) + '-' + ((new Date()).getDate()+1)}</td>
+	<td>new_asset_name</td>
+</tr>
+<!---->
+<!--################-->
+<!---->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${edit_screen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: EE05-->
+<!--Create new asset-->
+<tr>
+	<td>click</td>
+	<td>css=span.icon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.buttonDesc</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ees_newName</td>
+	<td>${new_asset_name}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_addCurrentParent</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=Create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Create</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=span.progress-bar-inner</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=span.progress-bar-inner</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

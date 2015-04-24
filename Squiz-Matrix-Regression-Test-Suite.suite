@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="ldap-user-groups-and-permissions--ldap-integration.case">ldap-user-groups-and-permissions--LDAP-integration</a></td></tr>
+<tr><td><a href="ldap-user-groups-and-permissions--ui-restrictions-regular-user.case">ldap-user-groups-and-permissions--ui-restrictions-regular-user</a></td></tr>
+<tr><td><a href="ldap-user-groups-and-permissions--asset-permissions.case">ldap-user-groups-and-permissions--asset-permissions</a></td></tr>
+<tr><td><a href="ldap-performance--caching-configuration.case">ldap-performance--caching-configuration</a></td></tr>
+<tr><td><a href="basic-content-authoring.case">basic-content-authoring</a></td></tr>
+<tr><td><a href="easy-edit-suite--basic-features.case">easy-edit-suite--basic-features</a></td></tr>
+<tr><td><a href="easy-edit-suite--basic-features-regular-user.case">easy-edit-suite--basic-features-regular-user</a></td></tr>
+<tr><td><a href="easy-edit-suite--basic-editing.case">easy-edit-suite--basic-editing</a></td></tr>
+<tr><td><a href="easy-edit-suite--basic-editing-regular-user.case">easy-edit-suite--basic-editing-regular-user</a></td></tr>
+<tr><td><a href="easy-edit-suite--create-new-page.case">easy-edit-suite--create-new-page</a></td></tr>
+<tr><td><a href="easy-edit-suite--create-new-page-regular-user.case">easy-edit-suite--create-new-page-regular-user</a></td></tr>
+<tr><td><a href="watson--curation-resource-availability.case">watson--curation-resource-availability</a></td></tr>
+<tr><td><a href="deakin-sync--link-page-available.case">deakin-sync--link-page-available</a></td></tr>
+<tr><td><a href="deakin-sync--integration-service.case">deakin-sync--integration-service</a></td></tr>
+<tr><td><a href="workflow--basic-workflow-reject.case">workflow--basic-workflow-reject</a></td></tr>
+<tr><td><a href="workflow--basic-workflow-approve.case">workflow--basic-workflow-approve</a></td></tr>
+<tr><td><a href="workflow--basic-workflow-self-approve.case">workflow--basic-workflow-self-approve</a></td></tr>
+<tr><td><a href="workflow--basic-workflow-nested-approver-group.case">workflow--basic-workflow-nested-approver-group</a></td></tr>
+<tr><td><a href="workflow--content-tools-workflow-approve.case">workflow--content-tools-workflow-approve</a></td></tr>
+</tbody></table>
+</body>
+</html>

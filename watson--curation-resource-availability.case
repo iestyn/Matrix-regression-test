@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>watson--curation-resource-availability</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">watson--curation-resource-availability</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: Watson -->
+<!--TEST CASE: Tests the availability of Watson resources-->
+<!--TEST IDs: W01, W02, W03-->
+<!---->
+<!--These tests will be run in the following domain: -->
+<tr>
+	<td>store</td>
+	<td>www-cms-uat.deakin.edu.au</td>
+	<td>domain</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/site-admin/watson/watson-sitemap</td>
+	<td>watson_sitemap</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/site-admin/watson/watson-sitemap-json</td>
+	<td>watson_sitemap_json</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=185&amp;sq_asset_path=69,71,185&amp;sq_link_path=70,72,218&amp;asset_ei_screen=metadata</td>
+	<td>metadata_screen</td>
+</tr>
+<!---->
+<!--################-->
+<!---->
+<!--# TEST ID: W03-->
+<!--Check Watson metadata scheme applied to random asset-->
+<tr>
+	<td>open</td>
+	<td>${metadata_screen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#backend_section_17 &gt; tbody &gt; tr &gt; td.sq-backend-section-subheading</td>
+	<td>Watson</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='backend_section_18']/tbody/tr[2]/td/table/tbody/tr/td/span</td>
+	<td>Ingestable</td>
+</tr>
+<!---->
+<!--# TEST ID: W01-->
+<!--Check watson-sitemap-->
+<tr>
+	<td>open</td>
+	<td>${watson_sitemap}</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: W02-->
+<!--Check watson-sitemap-json-->
+<tr>
+	<td>open</td>
+	<td>${watson_sitemap_json}</td>
+	<td></td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>
