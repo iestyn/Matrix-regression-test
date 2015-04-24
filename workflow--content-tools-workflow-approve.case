@@ -29,7 +29,7 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>javascript{'New content tool approve test asset - ' + ((new Date()).getFullYear()+1) + '-' +&nbsp;&nbsp;((new Date()).getMonth()+1) + '-' + ((new Date()).getDate()+1)}</td>
+	<td>javascript{'New content tool approve test asset - ' + ((new Date()).getFullYear()) + '-' +&nbsp;&nbsp;((new Date()).getMonth()+1) + '-' + ((new Date()).getDate()) + '-' + ((new Date()).getHours()) + ((new Date()).getMinutes())}</td>
 	<td>new_asset_name</td>
 </tr>
 <!---->
@@ -123,16 +123,21 @@
 	<td>new_asset</td>
 	<td></td>
 </tr>
+<tr>
+	<td>store</td>
+	<td>javascript{new String(storedVars.new_asset).replace(/\/_edit.*/i,'')}</td>
+	<td>new_asset_url</td>
+</tr>
 <!---->
 <!--Add some content tools-->
 <tr>
-	<td>open</td>
-	<td>http://www.google.com</td>
+	<td>selectWindow</td>
+	<td>null</td>
 	<td></td>
 </tr>
 <tr>
-	<td>open</td>
-	<td>${new_asset}/_edit#mode=edit&amp;screen=content</td>
+	<td>click</td>
+	<td>css=span.screenType.content</td>
 	<td></td>
 </tr>
 <tr>
@@ -198,23 +203,18 @@
 <!---->
 <!--Fill mandatory metadata-->
 <tr>
-	<td>open</td>
-	<td>http://www.google.com</td>
+	<td>selectWindow</td>
+	<td>null</td>
 	<td></td>
 </tr>
 <tr>
-	<td>open</td>
-	<td>${new_asset}/_edit#mode=edit&amp;screen=metadata</td>
+	<td>click</td>
+	<td>css=span.screenType.metadata</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td>id=metadata_field_select_241739_default</td>
 	<td></td>
 </tr>
 <tr>
@@ -266,13 +266,28 @@
 <!--# TEST ID: WF09-->
 <!--Test the page goes live correctly-->
 <tr>
-	<td>open</td>
-	<td>http://www.google.com</td>
+	<td>selectWindow</td>
+	<td>null</td>
 	<td></td>
 </tr>
 <tr>
-	<td>open</td>
-	<td>${new_asset}/_edit#mode=edit&amp;screen=details</td>
+	<td>click</td>
+	<td>css=span.screenType.details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=${status_select_element}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=${status_select_element}</td>
+	<td>label=Approve</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
 	<td></td>
 </tr>
 <tr>
@@ -283,6 +298,77 @@
 <tr>
 	<td>waitForNotVisible</td>
 	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=${status_select_element}</td>
+	<td>label=Make Live</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: WF10-->
+<!--Test the page goes into Safe edit-->
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=${status_select_element}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=${status_select_element}</td>
+	<td>label=Safe Edit</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: WF11-->
+<!--Test the page goes live from Safe Edit-->
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=span.screenType.details</td>
 	<td></td>
 </tr>
 <tr>
@@ -333,7 +419,6 @@
 <!---->
 <!--Test complete-->
 <!---->
-
 </tbody></table>
 </body>
 </html>

@@ -14,7 +14,7 @@
 <!--################-->
 <!--CATEGORY: Workflow-->
 <!--TEST CASE: Tests basic workflow approve function in Edit+-->
-<!--TEST IDs: WF03, WF04, WF05-->
+<!--TEST IDs: WF03, WF04, WF05, RD01-->
 <!---->
 <!--EXTRA INSTRUCTION: Ensure that the author_username user has author only access to the test page-->
 <!--EXTRA INSTRUCTION: Ensure that you running this test have approver access to the test page-->
@@ -270,6 +270,49 @@
 	<td></td>
 </tr>
 <!---->
+<!--# TEST ID: RD01-->
+<!--Check review date is set on approve-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${test_asset}/_edit#mode=edit&amp;screen=details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>name=hipo_job</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#ees_futureStatusToggle &gt; span.label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=td.sq-backend-table-cell</td>
+	<td>Up For Review</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='ees_futureStatusSchedule']/table/tbody/tr[2]/td[2]</td>
+	<td>One Off at 14:39 on 24 Apr, 2016</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>//div[@id='ees_futureStatusSchedule']/table/tbody/tr[2]/td[2]</td>
+	<td>review_info</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>Javascript{storedVariables.review_info.replace(/.*, /i,'')}</td>
+	<td>review_date</td>
+</tr>
+<!---->
 <!--Release locks-->
 <tr>
 	<td>open</td>
@@ -294,7 +337,6 @@
 <!---->
 <!--Test complete-->
 <!---->
-
 </tbody></table>
 </body>
 </html>

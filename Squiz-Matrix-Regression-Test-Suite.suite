@@ -19,14 +19,14 @@
 <tr><td><a href="easy-edit-suite--basic-editing-regular-user.case">easy-edit-suite--basic-editing-regular-user</a></td></tr>
 <tr><td><a href="easy-edit-suite--create-new-page.case">easy-edit-suite--create-new-page</a></td></tr>
 <tr><td><a href="easy-edit-suite--create-new-page-regular-user.case">easy-edit-suite--create-new-page-regular-user</a></td></tr>
-<tr><td><a href="watson--curation-resource-availability.case">watson--curation-resource-availability</a></td></tr>
-<tr><td><a href="deakin-sync--link-page-available.case">deakin-sync--link-page-available</a></td></tr>
-<tr><td><a href="deakin-sync--integration-service.case">deakin-sync--integration-service</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-reject.case">workflow--basic-workflow-reject</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-approve.case">workflow--basic-workflow-approve</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-self-approve.case">workflow--basic-workflow-self-approve</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-nested-approver-group.case">workflow--basic-workflow-nested-approver-group</a></td></tr>
 <tr><td><a href="workflow--content-tools-workflow-approve.case">workflow--content-tools-workflow-approve</a></td></tr>
+<tr><td><a href="deakin-sync--link-page-available.case">deakin-sync--link-page-available</a></td></tr>
+<tr><td><a href="deakin-sync--integration-service.case">deakin-sync--integration-service</a></td></tr>
+<tr><td><a href="watson--curation-resource-availability.case">watson--curation-resource-availability</a></td></tr>
 </tbody></table>
 </body>
 </html>
