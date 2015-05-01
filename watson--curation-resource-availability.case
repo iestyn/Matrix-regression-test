@@ -34,6 +34,11 @@
 </tr>
 <tr>
 	<td>store</td>
+	<td>/site-admin/watson/watson-sitemap-csv</td>
+	<td>watson_sitemap_csv</td>
+</tr>
+<tr>
+	<td>store</td>
 	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=185&amp;sq_asset_path=69,71,185&amp;sq_link_path=70,72,218&amp;asset_ei_screen=metadata</td>
 	<td>metadata_screen</td>
 </tr>
@@ -71,6 +76,14 @@
 <tr>
 	<td>open</td>
 	<td>${watson_sitemap_json}</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: W03-->
+<!--Check watson-sitemap-csv-->
+<tr>
+	<td>open</td>
+	<td>${watson_sitemap_csv}</td>
 	<td></td>
 </tr>
 <!---->

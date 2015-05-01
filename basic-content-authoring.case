@@ -24,7 +24,17 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=1092&amp;asset_ei_screen=contents&amp;SQ_BACKEND_PAGE=main&amp;sq_link_path=70%2C72%2C1601&amp;sq_asset_path=69%2C71%2C1091</td>
+	<td>1092</td>
+	<td>test_asset_id</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>1604</td>
+	<td>test_asset_body_div_id</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=${test_asset_id}&amp;asset_ei_screen=contents&amp;SQ_BACKEND_PAGE=main</td>
 	<td>edit_screen</td>
 </tr>
 <!---->
@@ -60,7 +70,7 @@
 </tr>
 <tr>
 	<td>clickAt</td>
-	<td>css=#bodycopy_1092_content_type_wysiwyg_1604_contents_div_viper</td>
+	<td>css=#bodycopy_${test_asset_id}_content_type_wysiwyg_${test_asset_body_div_id}_contents_div_viper</td>
 	<td></td>
 </tr>
 <tr>
