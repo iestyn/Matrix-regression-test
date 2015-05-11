@@ -16,28 +16,11 @@
 <!--TEST CASE: Tests the LDAP caching-->
 <!--TEST IDs: LC01-->
 <!---->
-<!--These tests will be run in the following domain: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=3055&amp;sq_asset_path=2,15,66,3055&amp;sq_link_path=2,15,67,4828&amp;asset_ei_screen=details</td>
-	<td>config_screen</td>
-</tr>
-<!---->
 <!--################-->
 <!---->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${config_screen}</td>
+	<td>${ldap_config_LDAPBridgeAssetDetailsScreen}</td>
 	<td></td>
 </tr>
 <!---->
@@ -46,17 +29,16 @@
 <tr>
 	<td>verifyText</td>
 	<td>//table[@id='backend_section_9']/tbody/tr[2]/td/table/tbody/tr/td[2]</td>
-	<td>On*</td>
+	<td>${ldap_cache_cachingState}</td>
 </tr>
 <tr>
 	<td>verifyText</td>
 	<td>//table[@id='backend_section_9']/tbody/tr[2]/td/table/tbody/tr[2]/td[2]</td>
-	<td>86400*</td>
+	<td>${ldap_cache_cachingExpiry}</td>
 </tr>
 <!---->
 <!--Test complete-->
 <!---->
-
 </tbody></table>
 </body>
 </html>

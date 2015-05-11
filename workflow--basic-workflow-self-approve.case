@@ -18,28 +18,11 @@
 <!---->
 <!--EXTRA INSTRUCTION: Ensure that you running this test have approver access to the test page-->
 <!---->
-<!--Variables used in this test case: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page</td>
-	<td>test_asset</td>
-</tr>
-<!---->
 <!--################-->
 <!---->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${test_asset}/_edit#mode=edit&amp;screen=details</td>
+	<td>${workflow_permissions_testPageURL}/_edit#mode=edit&amp;screen=details</td>
 	<td></td>
 </tr>
 <tr>
@@ -72,7 +55,7 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=page_standard_35986_change_status</td>
+	<td>id=page_standard_${workflow_permissions_test_pageAssetID}_change_status</td>
 	<td>label=Approve</td>
 </tr>
 <tr>
@@ -94,12 +77,12 @@
 <!--Make live and reset the asset-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
+	<td>${workflow_permissions_testPageURL}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${test_asset}/_edit#mode=edit&amp;screen=details</td>
+	<td>${workflow_permissions_testPageURL}/_edit#mode=edit&amp;screen=details</td>
 	<td></td>
 </tr>
 <tr>
@@ -114,12 +97,12 @@
 </tr>
 <tr>
 	<td>waitForVisible</td>
-	<td>id=page_standard_35986_change_status</td>
+	<td>id=page_standard_${workflow_permissions_test_pageAssetID}_change_status</td>
 	<td></td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=page_standard_35986_change_status</td>
+	<td>id=page_standard_${workflow_permissions_test_pageAssetID}_change_status</td>
 	<td>label=Make Live</td>
 </tr>
 <tr>
@@ -141,12 +124,7 @@
 <!--Release locks-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${test_asset}/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=35986&amp;asset_ei_screen=settings&amp;sq_link_path=70%2C72%2C173%2C69083%2C69107&amp;sq_asset_path=69%2C71%2C153%2C43182%2C35986</td>
+	<td>${workflow_permissions_testPageURL}/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=${workflow_permissions_test_pageAssetID}&amp;asset_ei_screen=settings</td>
 	<td></td>
 </tr>
 <tr>
@@ -156,13 +134,17 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>xpath=(//input[@id=''])</td>
+	<td>//input[@value='Release Lock(s)']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
 	<td></td>
 </tr>
 <!---->
 <!--Test complete-->
 <!---->
-
 </tbody></table>
 </body>
 </html>

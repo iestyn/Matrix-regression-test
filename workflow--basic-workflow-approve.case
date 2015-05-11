@@ -19,39 +19,17 @@
 <!--EXTRA INSTRUCTION: Ensure that the author_username user has author only access to the test page-->
 <!--EXTRA INSTRUCTION: Ensure that you running this test have approver access to the test page-->
 <!---->
-<!--Variables used in this test case: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page</td>
-	<td>test_asset</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>cpage</td>
-	<td>author_username</td>
-</tr>
-<!---->
 <!--################-->
 <!---->
 <!--Impersonate an author-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>/_admin</td>
+	<td>${admin_ui_url}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//img[contains(@src,'https://www-cms-uat.deakin.edu.au/__lib/web/images/icons/header/login_as_white.png')]</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -62,7 +40,7 @@
 <tr>
 	<td>type</td>
 	<td>id=user</td>
-	<td>${author_username}</td>
+	<td>${workflow_permissions_authorUsername}</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -78,12 +56,7 @@
 <!--Open editor-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${test_asset}/_edit#mode=edit&amp;screen=details</td>
+	<td>${workflow_permissions_testPageURL}/_edit#mode=edit&amp;screen=details</td>
 	<td></td>
 </tr>
 <tr>
@@ -99,6 +72,11 @@
 <!---->
 <!--# TEST ID: WF03-->
 <!--Check can apply for approval-->
+<tr>
+	<td>waitforvisible</td>
+	<td>id=ees_safeEditButton</td>
+	<td></td>
+</tr>
 <tr>
 	<td>click</td>
 	<td>id=ees_safeEditButton</td>
@@ -116,7 +94,7 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=page_standard_35986_change_status</td>
+	<td>id=page_standard_${workflow_permissions_test_pageAssetID}_change_status</td>
 	<td>label=Apply for Approval</td>
 </tr>
 <tr>
@@ -138,7 +116,7 @@
 <!--Release lock-->
 <tr>
 	<td>open</td>
-	<td>${test_asset}/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=35986&amp;asset_ei_screen=settings&amp;sq_link_path=70%2C72%2C173%2C69083%2C69107&amp;sq_asset_path=69%2C71%2C153%2C43182%2C35986</td>
+	<td>${workflow_permissions_testPageURL}/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=${workflow_permissions_test_pageAssetID}&amp;asset_ei_screen=settings</td>
 	<td></td>
 </tr>
 <tr>
@@ -153,42 +131,52 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>xpath=(//input[@id=''])</td>
+	<td>//input[@value='Release Lock(s)']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
 	<td></td>
 </tr>
 <!---->
 <!--Stop impersonating author-->
 <tr>
 	<td>open</td>
-	<td>/_admin</td>
+	<td>${admin_ui_url}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=sq-menu-tab-my_space</td>
 	<td>My Account</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>sq_header</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>//img[contains(@src,'https://www-cms-uat.deakin.edu.au/__lib/web/images/icons/header/logout_and_resume.png')]</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/logout_and_resume.png')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForText</td>
 	<td>id=sq-menu-tab-my_space</td>
 	<td>My Account</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
 </tr>
 <!---->
 <!--# TEST ID: WF04-->
 <!--Check able to approve -->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${test_asset}/_edit#mode=edit&amp;screen=workflow</td>
+	<td>${workflow_permissions_testPageURL}/_edit#mode=edit&amp;screen=workflow</td>
 	<td></td>
 </tr>
 <tr>
@@ -203,12 +191,12 @@
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=page_standard_35986_change_status</td>
+	<td>id=page_standard_${workflow_permissions_test_pageAssetID}_change_status</td>
 	<td>label=Approve</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=page_standard_35986_workflow_new_log_message</td>
+	<td>id=page_standard_${workflow_permissions_test_pageAssetID}_workflow_new_log_message</td>
 	<td>approve test</td>
 </tr>
 <tr>
@@ -226,12 +214,12 @@
 <!--Check able to make live-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
+	<td>${workflow_permissions_testPageURL}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${test_asset}/_edit#mode=edit&amp;screen=details</td>
+	<td>${workflow_permissions_testPageURL}/_edit#mode=edit&amp;screen=details</td>
 	<td></td>
 </tr>
 <tr>
@@ -246,12 +234,12 @@
 </tr>
 <tr>
 	<td>waitForVisible</td>
-	<td>id=page_standard_35986_change_status</td>
+	<td>id=page_standard_${workflow_permissions_test_pageAssetID}_change_status</td>
 	<td></td>
 </tr>
 <tr>
 	<td>select</td>
-	<td>id=page_standard_35986_change_status</td>
+	<td>id=page_standard_${workflow_permissions_test_pageAssetID}_change_status</td>
 	<td>label=Make Live</td>
 </tr>
 <tr>
@@ -274,17 +262,22 @@
 <!--Check review date is set on approve-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
+	<td>${workflow_permissions_testPageURL}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${test_asset}/_edit#mode=edit&amp;screen=details</td>
+	<td>${workflow_permissions_testPageURL}/_edit#mode=edit&amp;screen=details</td>
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>name=hipo_job</td>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
 	<td></td>
 </tr>
 <tr>
@@ -298,9 +291,24 @@
 	<td>Up For Review</td>
 </tr>
 <tr>
+	<td>store</td>
+	<td>javascript{(new Date()).getDate()}</td>
+	<td>reviewDay</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{var monthNames=[&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;,&quot;July&quot;,&quot;August&quot;,&quot;September&quot;,&quot;October&quot;,&quot;November&quot;,&quot;December&quot;],d=new Date;monthNames[d.getMonth()];}</td>
+	<td>reviewMonth</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{(new Date()).getFullYear()*1+1}</td>
+	<td>reviewYear</td>
+</tr>
+<tr>
 	<td>verifyText</td>
 	<td>//div[@id='ees_futureStatusSchedule']/table/tbody/tr[2]/td[2]</td>
-	<td>One Off at 14:39 on 24 Apr, 2016</td>
+	<td>* ${reviewDay} ${reviewMonth}, ${reviewYear}</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -316,13 +324,13 @@
 <!--Release locks-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
+	<td>${workflow_permissions_testPageURL}/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=${workflow_permissions_test_pageAssetID}&amp;asset_ei_screen=settings</td>
 	<td></td>
 </tr>
 <tr>
-	<td>open</td>
-	<td>${test_asset}/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=35986&amp;asset_ei_screen=settings&amp;sq_link_path=70%2C72%2C173%2C69083%2C69107&amp;sq_asset_path=69%2C71%2C153%2C43182%2C35986</td>
-	<td></td>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
 </tr>
 <tr>
 	<td>selectFrame</td>
@@ -331,7 +339,12 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>xpath=(//input[@id=''])</td>
+	<td>//input[@value='Release Lock(s)']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
 	<td></td>
 </tr>
 <!---->

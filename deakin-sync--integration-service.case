@@ -16,28 +16,6 @@
 <!--TEST CASE: Tests the DeakinSync SOAP service is operational-->
 <!--TEST IDs: DS02, DS03-->
 <!---->
-<!--These tests will be run in the following domain: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/squiz-matrix-for-staff/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=81393&amp;sq_asset_path=59,81393&amp;sq_link_path=59,154392&amp;asset_ei_screen=details</td>
-	<td>service_link</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/squiz-matrix-for-staff/deakinsync-soap-service-status/_nocache</td>
-	<td>status_page_link</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/_web_services/oneview-content-server?wsdl</td>
-	<td>wsdl_link</td>
-</tr>
-<!---->
 <!--################-->
 <!---->
 <!---->
@@ -45,12 +23,7 @@
 <!--Check the page is available-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${service_link}</td>
+	<td>${deakinsync_web_service_adminDetailsURL}</td>
 	<td></td>
 </tr>
 <tr>
@@ -68,21 +41,16 @@
 	<td>//table[@id='backend_section_7']/tbody/tr[2]/td/table/tbody/tr/td[2]</td>
 	<td>OneView-content-server</td>
 </tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
 <!---->
 <!--Check the WSDL doc is available-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${wsdl_link}</td>
+	<td>${deakinsync_web_service_wsdlURL}</td>
 	<td></td>
 </tr>
 <tr>
@@ -95,17 +63,7 @@
 <!--Check the SOAP service is available-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${status_page_link}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>null</td>
+	<td>${deakinsync_web_service_statusPageURL}</td>
 	<td></td>
 </tr>
 <tr>
@@ -121,7 +79,6 @@
 <!---->
 <!--Test complete-->
 <!---->
-
 </tbody></table>
 </body>
 </html>

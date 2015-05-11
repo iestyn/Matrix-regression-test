@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
 <title>LDAP User groups and Permissions</title>
 </head>
 <body>
@@ -16,37 +15,12 @@
 <!--TEST CASE: Tests presence of the IAM / LDAP integration-->
 <!--TEST IDs: L01-->
 <!---->
-<!--These tests will be run in the following domain:-->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<!---->
-<!--Page to perform the test on-->
-<tr>
-	<td>store</td>
-	<td>/_admin/?assetid=3055%3Acn%3Dacg-squizadmins%2Cou%3DAccessgroups%2Cdc%3Ddeakin%2Cdc%3Dedu%2Cdc%3Dau&amp;asset_ei_screen=details&amp;backend_section=am&amp;am_section=edit_asset&amp;backend_section=am</td>
-	<td>ui_url</td>
-</tr>
-<!---->
 <!--################-->
-<!---->
-<tr>
-	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>/_admin</td>
-	<td></td>
-</tr>
 <!---->
 <!--Load an LDAP group-->
 <tr>
 	<td>open</td>
-	<td>${ui_url}</td>
+	<td>${ldap_integration_groupUrl}</td>
 	<td></td>
 </tr>
 <!---->
@@ -64,7 +38,12 @@
 </tr>
 <tr>
 	<td>verifyTitle</td>
-	<td>acg-squizadmins</td>
+	<td>${ldap_integration_groupName}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
 	<td></td>
 </tr>
 <!---->

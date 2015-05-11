@@ -8,10 +8,12 @@
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="test-environment-variables">test-environment-variables</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--ldap-integration.case">ldap-user-groups-and-permissions--LDAP-integration</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--ui-restrictions-regular-user.case">ldap-user-groups-and-permissions--ui-restrictions-regular-user</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--asset-permissions.case">ldap-user-groups-and-permissions--asset-permissions</a></td></tr>
 <tr><td><a href="ldap-performance--caching-configuration.case">ldap-performance--caching-configuration</a></td></tr>
+<tr><td><a href="ldap-performance--caching-latency.case">ldap-performance--caching-latency</a></td></tr>
 <tr><td><a href="basic-content-authoring.case">basic-content-authoring</a></td></tr>
 <tr><td><a href="easy-edit-suite--basic-features.case">easy-edit-suite--basic-features</a></td></tr>
 <tr><td><a href="easy-edit-suite--basic-features-regular-user.case">easy-edit-suite--basic-features-regular-user</a></td></tr>
@@ -19,6 +21,8 @@
 <tr><td><a href="easy-edit-suite--basic-editing-regular-user.case">easy-edit-suite--basic-editing-regular-user</a></td></tr>
 <tr><td><a href="easy-edit-suite--create-new-page.case">easy-edit-suite--create-new-page</a></td></tr>
 <tr><td><a href="easy-edit-suite--create-new-page-regular-user.case">easy-edit-suite--create-new-page-regular-user</a></td></tr>
+<tr><td><a href="content-tools--lead-text-tool.case">content-tools--lead-text-tool</a></td></tr>
+<tr><td><a href="content-tools--content-section-tool.case">content-tools--content-section-tool</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-reject.case">workflow--basic-workflow-reject</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-approve.case">workflow--basic-workflow-approve</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-self-approve.case">workflow--basic-workflow-self-approve</a></td></tr>

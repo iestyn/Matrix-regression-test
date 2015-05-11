@@ -16,33 +16,11 @@
 <!--TEST CASE: Tests basic workflow approve function in Edit+-->
 <!--TEST IDs: WF08, WF09, WF10, WF11-->
 <!---->
-<!--Variables used in this test case: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page</td>
-	<td>test_asset</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>javascript{'New content tool approve test asset - ' + ((new Date()).getFullYear()) + '-' +&nbsp;&nbsp;((new Date()).getMonth()+1) + '-' + ((new Date()).getDate()) + '-' + ((new Date()).getHours()) + ((new Date()).getMinutes())}</td>
-	<td>new_asset_name</td>
-</tr>
-<!---->
 <!--################-->
 <!---->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${test_asset}/_edit#mode=edit&amp;screen=details</td>
+	<td>${workflow_permissions_testPageURL}/_edit#mode=edit&amp;screen=details</td>
 	<td></td>
 </tr>
 <tr>
@@ -71,7 +49,7 @@
 <tr>
 	<td>type</td>
 	<td>id=ees_newName</td>
-	<td>${new_asset_name}</td>
+	<td>New content tool approve test asset ${workflow_permissions_newPageName}</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -130,11 +108,6 @@
 </tr>
 <!---->
 <!--Add some content tools-->
-<tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>css=span.screenType.content</td>
@@ -203,11 +176,6 @@
 <!---->
 <!--Fill mandatory metadata-->
 <tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>css=span.screenType.metadata</td>
 	<td></td>
@@ -266,11 +234,6 @@
 <!--# TEST ID: WF09-->
 <!--Test the page goes live correctly-->
 <tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>css=span.screenType.details</td>
 	<td></td>
@@ -324,11 +287,6 @@
 <!--# TEST ID: WF10-->
 <!--Test the page goes into Safe edit-->
 <tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>css=span.screenType.details</td>
 	<td></td>
@@ -361,11 +319,6 @@
 <!---->
 <!--# TEST ID: WF11-->
 <!--Test the page goes live from Safe Edit-->
-<tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>css=span.screenType.details</td>

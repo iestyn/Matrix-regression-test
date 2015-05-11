@@ -14,34 +14,7 @@
 <!--################-->
 <!--CATEGORY: Watson -->
 <!--TEST CASE: Tests the availability of Watson resources-->
-<!--TEST IDs: W01, W02, W03-->
-<!---->
-<!--These tests will be run in the following domain: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/watson/watson-sitemap</td>
-	<td>watson_sitemap</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/watson/watson-sitemap-json</td>
-	<td>watson_sitemap_json</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/watson/watson-sitemap-csv</td>
-	<td>watson_sitemap_csv</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=185&amp;sq_asset_path=69,71,185&amp;sq_link_path=70,72,218&amp;asset_ei_screen=metadata</td>
-	<td>metadata_screen</td>
-</tr>
+<!--TEST IDs: W01, W02, W03, W04-->
 <!---->
 <!--################-->
 <!---->
@@ -49,7 +22,7 @@
 <!--Check Watson metadata scheme applied to random asset-->
 <tr>
 	<td>open</td>
-	<td>${metadata_screen}</td>
+	<td>${watson_ingest_metadataTestPageURL}</td>
 	<td></td>
 </tr>
 <tr>
@@ -67,7 +40,7 @@
 <!--Check watson-sitemap-->
 <tr>
 	<td>open</td>
-	<td>${watson_sitemap}</td>
+	<td>${watson_sitemap_xmlPageURL}</td>
 	<td></td>
 </tr>
 <!---->
@@ -75,15 +48,15 @@
 <!--Check watson-sitemap-json-->
 <tr>
 	<td>open</td>
-	<td>${watson_sitemap_json}</td>
+	<td>${watson_sitemap_jsonPageURL}</td>
 	<td></td>
 </tr>
 <!---->
-<!--# TEST ID: W03-->
+<!--# TEST ID: W04-->
 <!--Check watson-sitemap-csv-->
 <tr>
 	<td>open</td>
-	<td>${watson_sitemap_csv}</td>
+	<td>${watson_sitemap_csvPageURL}</td>
 	<td></td>
 </tr>
 <!---->

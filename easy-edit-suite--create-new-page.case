@@ -16,33 +16,11 @@
 <!--TEST CASE: Tests the ability to create a new asset-->
 <!--TEST IDs: EE05-->
 <!---->
-<!--These tests will be run in the following domain: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page/_edit#mode=edit&amp;screen=content</td>
-	<td>edit_screen</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>javascript{'New asset - ' + ((new Date()).getFullYear()+1) + '-' +&nbsp;&nbsp;((new Date()).getMonth()+1) + '-' + ((new Date()).getDate()+1)}</td>
-	<td>new_asset_name</td>
-</tr>
-<!---->
 <!--################-->
 <!---->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${edit_screen}</td>
+	<td>${workflow_permissions_testPageEditContentScreenURL}</td>
 	<td></td>
 </tr>
 <tr>
@@ -71,7 +49,7 @@
 <tr>
 	<td>type</td>
 	<td>id=ees_newName</td>
-	<td>${new_asset_name}</td>
+	<td>${workflow_permissions_newPageName}</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -112,6 +90,33 @@
 	<td>waitForNotVisible</td>
 	<td>css=img[alt=&quot;Loading&quot;]</td>
 	<td></td>
+</tr>
+<!---->
+<!--Record details for use in following content tool tests-->
+<tr>
+	<td>storeAttribute</td>
+	<td>//*[@id=&quot;ees_changeStatus&quot;]//select@id</td>
+	<td>status_select_element</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=span.id.alignLeft</td>
+	<td>newAssetID</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{new String(storedVars.newAssetID).replace(/#/i,'')}</td>
+	<td>content_tools_basic_test_pageAssetID</td>
+</tr>
+<tr>
+	<td>storeLocation</td>
+	<td>content_tools_basic_test_pageAssetEditScreen</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{new String(storedVars.content_tools_basic_test_pageAssetEditScreen).replace(/\/_edit.*/i,'')}</td>
+	<td>content_tools_basic_test_pageAssetURL</td>
 </tr>
 <!---->
 <!--Test complete-->

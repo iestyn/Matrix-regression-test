@@ -16,29 +16,17 @@
 <!--TEST CASE: Tests the basic features are available-->
 <!--TEST IDs: EE01, EE02, EE06-->
 <!---->
-<!--These tests will be run in the following domain: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/workflow-and-permissions-testing/workflow-test-page/_edit#mode=edit&amp;screen=content</td>
-	<td>edit_screen</td>
-</tr>
-<!---->
 <!--################-->
 <!---->
 <!--# TEST ID: EE01-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
+	<td>${basic_features_test_pageURL}</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>${edit_screen}</td>
+	<td>${basic_features_test_pageEditScreen}</td>
 	<td></td>
 </tr>
 <tr>
@@ -54,11 +42,6 @@
 <!---->
 <!--# TEST ID: EE02-->
 <!--Check that the editing tabs and other tools are there-->
-<tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
 <tr>
 	<td>verifyElementPresent</td>
 	<td>css=span.screenType.details</td>
@@ -113,11 +96,11 @@
 <!--Check that each tab is reachable-->
 <tr>
 	<td>click</td>
-	<td>css=span.screenType.details</td>
+	<td>//a[@id=&quot;ees_screenMenudetailsDefault&quot;]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForVisible</td>
 	<td>css=h3.sectionHeading</td>
 	<td></td>
 </tr>
@@ -128,26 +111,41 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.screenType.metadata</td>
+	<td>//a[@id=&quot;ees_screenMenudetailsDefault&quot;]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
-	<td>css=h3.schemaHeading_0</td>
+	<td>waitForVisible</td>
+	<td>css=h3.sectionHeading</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>css=h3.schemaHeading_3</td>
-	<td>Global Schema</td>
+	<td>css=h3.sectionHeading</td>
+	<td>Content</td>
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.screenType.workflow</td>
+	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForVisible</td>
+	<td>css=h3.schemaHeading_1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.schemaHeading_1</td>
+	<td>Deakin</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id=&quot;ees_screenMenuworkflowDefault&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
 	<td>css=h3.sectionHeading</td>
 	<td></td>
 </tr>
@@ -158,11 +156,11 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.screenType.linking</td>
+	<td>//a[@id=&quot;ees_screenMenulinkingDefault&quot;]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForVisible</td>
 	<td>css=h3.sectionHeading</td>
 	<td></td>
 </tr>
@@ -173,11 +171,11 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>css=span.screenType.urls</td>
+	<td>//a[@id=&quot;ees_screenMenuurlsDefault&quot;]</td>
 	<td></td>
 </tr>
 <tr>
-	<td>waitForElementPresent</td>
+	<td>waitForVisible</td>
 	<td>css=h3.sectionHeading</td>
 	<td></td>
 </tr>
@@ -205,11 +203,6 @@
 	<td></td>
 </tr>
 <tr>
-	<td>selectWindow</td>
-	<td>null</td>
-	<td></td>
-</tr>
-<tr>
 	<td>verifyElementPresent</td>
 	<td>css=#ees_showAccessibilityOverlay &gt; span.icon</td>
 	<td></td>
@@ -227,6 +220,11 @@
 <!---->
 <!---->
 <!--Test complete-->
+<tr>
+	<td>open</td>
+	<td>${admin_ui_url}</td>
+	<td></td>
+</tr>
 <!---->
 </tbody></table>
 </body>

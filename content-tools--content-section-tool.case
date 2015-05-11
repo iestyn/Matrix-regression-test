@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>content-tools--content-section-tool</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">content-tools--content-section-tool</td></tr>
+</thead><tbody>
+<!--CATEGORY: Content Tools-->
+<!--TEST CASE: Tests the content section tool-->
+<!--TEST IDs: CT02-->
+<!---->
+<!--EXTRA INSTRUCTION: Requires easy-edit-suite--create-new-page.case to be executed first!-->
+<!---->
+<!--################-->
+<!---->
+<tr>
+	<td>open</td>
+	<td>${content_tools_basic_test_pageAssetURL}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${content_tools_basic_test_pageAssetURL}/_edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: CT02-->
+<!--Add a Content section tool-->
+<tr>
+	<td>click</td>
+	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!--################-->
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add Content Tool</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.content_section.assetToCreate &gt; span.buttonContent</td>
+	<td>Content Section: Rich text content area. You can embed as many of these as you'd like.</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>//div[@data-content-tool=&quot;content_section&quot;]@data-folder-id</td>
+	<td>newContentSectionAssetID</td>
+</tr>
+<!---->
+<!--Format the tool-->
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/a[@title=&quot;Edit Container Properties&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=toolSizeSelect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=toolSizeSelect</td>
+	<td>label=One third</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit_properties_ok_${newContentSectionAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]@class</td>
+	<td>*span-one-third*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/a[@title=&quot;Edit Container Properties&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=toolSizeSelect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=toolSizeSelect</td>
+	<td>label=Full width</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit_properties_ok_${newContentSectionAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]@class</td>
+	<td>*span-full-width*</td>
+</tr>
+<!---->
+<!--Try and add a well-->
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/a[@title=&quot;Add Content Well&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/div[@data-content-tool=&quot;content_well&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/div[@data-content-tool=&quot;content_well&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/div[@data-content-tool=&quot;content_well&quot;]@data-folder-id</td>
+	<td>newWellAssetID</td>
+</tr>
+<!---->
+<!--Format the well-->
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/div[@data-folder-id=&quot;${newWellAssetID}&quot;]/div/a[@title=&quot;Edit Container Properties&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=toolColourSelect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=toolColourSelect</td>
+	<td>label=Yellow</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=toolPositionSelect</td>
+	<td>label=Left</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit_properties_ok_${newWellAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/div[@id=&quot;bodycopy_div_${newContentSectionAssetID}&quot;]@class</td>
+	<td>*alignRight*</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newWellAssetID}&quot;]@class</td>
+	<td>*yellow*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/div[@data-folder-id=&quot;${newWellAssetID}&quot;]/div/a[@title=&quot;Edit Container Properties&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=toolColourSelect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=toolColourSelect</td>
+	<td>label=White</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=toolPositionSelect</td>
+	<td>label=Right</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit_properties_ok_${newWellAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/div[@id=&quot;bodycopy_div_${newContentSectionAssetID}&quot;]@class</td>
+	<td>*alignLeft*</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newWellAssetID}&quot;]@class</td>
+	<td>*white*</td>
+</tr>
+<!---->
+<!--Delete the well-->
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newWellAssetID}&quot;]/div/a[@title=&quot;Delete Container&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--Try and add another well-->
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/a[@title=&quot;Add Content Well&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/div[@data-content-tool=&quot;content_well&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newContentSectionAssetID}&quot;]/div/div[@data-content-tool=&quot;content_well&quot;]@data-folder-id</td>
+	<td>newWellAssetID</td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

@@ -16,35 +16,18 @@
 <!--TEST CASE: Tests a regular user can't access system admin areas of Squiz Matrix admin UI-->
 <!--TEST IDs: L02-->
 <!---->
-<!--These tests will be run in the following domain: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>crispd</td>
-	<td>regular_username</td>
-</tr>
-<!---->
 <!--################-->
 <!---->
-<tr>
-	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>/_admin</td>
-	<td></td>
-</tr>
 <!---->
 <!--Impersonate a regular user-->
 <tr>
+	<td>open</td>
+	<td>${admin_ui_url}</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
-	<td>//img[contains(@src,'https://www-cms-uat.deakin.edu.au/__lib/web/images/icons/header/login_as_white.png')]</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -55,7 +38,7 @@
 <tr>
 	<td>type</td>
 	<td>id=user</td>
-	<td>${regular_username}</td>
+	<td>${ldap_integration_authorUsername}</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -67,17 +50,22 @@
 	<td>id=sq-menu-tab-my_space</td>
 	<td>My Account</td>
 </tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
 <!---->
 <!--# TEST ID: L02 -->
 <!--Check that admin functions are disabled-->
 <tr>
 	<td>verifyElementNotPresent</td>
-	<td>//img[contains(@src,'https://www-cms-uat.deakin.edu.au/__lib/web/images/icons/header/login_as_white.png')]</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>open</td>
-	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=20&amp;sq_asset_path=2,20&amp;sq_link_path=2,20&amp;asset_ei_screen=details</td>
+	<td>${admin_ui_url}?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=20&amp;sq_asset_path=2,20&amp;sq_link_path=2,20&amp;asset_ei_screen=details</td>
 	<td></td>
 </tr>
 <tr>
@@ -87,7 +75,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=17&amp;sq_asset_path=2,17&amp;sq_link_path=2,17&amp;asset_ei_screen=details</td>
+	<td>${admin_ui_url}?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=17&amp;sq_asset_path=2,17&amp;sq_link_path=2,17&amp;asset_ei_screen=details</td>
 	<td></td>
 </tr>
 <tr>
@@ -97,7 +85,7 @@
 </tr>
 <tr>
 	<td>open</td>
-	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=5&amp;sq_asset_path=5&amp;sq_link_path=5&amp;asset_ei_screen=paths</td>
+	<td>${admin_ui_url}?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=5&amp;sq_asset_path=5&amp;sq_link_path=5&amp;asset_ei_screen=paths</td>
 	<td></td>
 </tr>
 <tr>
@@ -109,7 +97,7 @@
 <!--Stop impersonating regular user-->
 <tr>
 	<td>open</td>
-	<td>/_admin</td>
+	<td>${admin_ui_url}</td>
 	<td></td>
 </tr>
 <tr>
@@ -119,7 +107,17 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//img[contains(@src,'https://www-cms-uat.deakin.edu.au/__lib/web/images/icons/header/logout_and_resume.png')]</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/logout_and_resume.png')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
 	<td></td>
 </tr>
 <!---->

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-dev.deakin.edu.au" />
+<title>ldap-performance--caching-latency</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">ldap-performance--caching-latency</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: LDAP Performance-->
+<!--TEST CASE: Tests average latency in LDAP Caching-->
+<!--TEST IDs: LC02-->
+<!---->
+<!--EXTRA INSTRUCTION: Ensure that the author_username user has author only access to the test page-->
+<!--EXTRA INSTRUCTION: Ensure that you running this test have approver access to the test page-->
+<!--EXTRA INSTRUCTION: Change the 'numberRuns' for repeated testing of this case (for statistical analysis)-->
+<!---->
+<!--################-->
+<!---->
+<tr>
+	<td>store</td>
+	<td>0</td>
+	<td>currentRun</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>1</td>
+	<td>numberRuns</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td></td>
+	<td>pageLoadTimes</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td></td>
+	<td>safeEditLoadTimes</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td></td>
+	<td>pageApplyForApprovalTimes</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td></td>
+	<td>pageApproveTimes</td>
+</tr>
+<!---->
+<!--Repeat if necessary-->
+<tr>
+	<td>while</td>
+	<td>${currentRun} &lt; ${numberRuns}</td>
+	<td></td>
+</tr>
+<!---->
+<!--Impersonate an author-->
+<tr>
+	<td>open</td>
+	<td>${admin_ui_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>sq_header</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user</td>
+	<td>${ldap_cache_testContentAuthor}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.sq-btn-blue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
+<!---->
+<!--Open editor-->
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startTime</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${ldap_cache_testAssetUrl}/_edit#mode=edit&amp;screen=details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>pageLoadTime</td>
+</tr>
+<!---->
+<!--Check can apply for approval-->
+<tr>
+	<td>waitForVisible</td>
+	<td>id=ees_safeEditButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startTime</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_safeEditButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>safeEditLoadTime</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=page_standard_${ldap_cache_testAssetID}_change_status</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=page_standard_${ldap_cache_testAssetID}_change_status</td>
+	<td>label=Apply for Approval</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startTime</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>pageApplyForApprovalTime</td>
+</tr>
+<!---->
+<!--Release lock-->
+<tr>
+	<td>open</td>
+	<td>${ldap_cache_testAssetUrl}/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=${ldap_cache_testAssetID}&amp;asset_ei_screen=settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>sq_main</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Release Lock(s)']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>//input[@id='']</td>
+	<td>Acquire Lock(s)</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
+<!---->
+<!--Stop impersonating author-->
+<tr>
+	<td>open</td>
+	<td>${admin_ui_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/logout_and_resume.png')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
+<!---->
+<!--Check able to approve -->
+<tr>
+	<td>open</td>
+	<td>${ldap_cache_testAssetUrl}/_edit#mode=edit&amp;screen=workflow</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=page_standard_${ldap_cache_testAssetID}_change_status</td>
+	<td>label=Approve</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=page_standard_${ldap_cache_testAssetID}_workflow_new_log_message</td>
+	<td>approve test</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startTime</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=p</td>
+	<td>Not currently in workflow.</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>pageApproveTime</td>
+</tr>
+<!---->
+<!--Check able to make live-->
+<tr>
+	<td>open</td>
+	<td>${ldap_cache_testAssetUrl}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${ldap_cache_testAssetUrl}/_edit#mode=edit&amp;screen=details</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=page_standard_${ldap_cache_testAssetID}_change_status</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=page_standard_${ldap_cache_testAssetID}_change_status</td>
+	<td>label=Make Live</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_saveButtonAction</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--Release locks-->
+<tr>
+	<td>open</td>
+	<td>${ldap_cache_testAssetUrl}/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=${ldap_cache_testAssetID}&amp;asset_ei_screen=settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>sq_main</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Release Lock(s)']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
+<!---->
+<!--Repeat if necessary-->
+<tr>
+	<td>push</td>
+	<td>${pageLoadTime}</td>
+	<td>pageLoadTimes</td>
+</tr>
+<tr>
+	<td>push</td>
+	<td>${safeEditLoadTime}</td>
+	<td>safeEditLoadTimes</td>
+</tr>
+<tr>
+	<td>push</td>
+	<td>${pageApplyForApprovalTime}</td>
+	<td>pageApplyForApprovalTimes</td>
+</tr>
+<tr>
+	<td>push</td>
+	<td>${pageApproveTime}</td>
+	<td>pageApproveTimes</td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>storedVars['currentRun']*1+1</td>
+	<td>currentRun</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>CurrentRun= ${currentRun}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: LC02-->
+<!--Report timings-->
+<tr>
+	<td>echo</td>
+	<td>####################################################################</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####################################################################</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####&nbsp;&nbsp;LDAP Cache Latency Test - LC02</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####&nbsp;&nbsp;pageLoadTime, safeEditLoadTime, pageApplyForApprovalTime, pageApproveTime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####&nbsp;&nbsp;${pageLoadTimes}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####&nbsp;&nbsp;${safeEditLoadTimes}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####&nbsp;&nbsp;${pageApplyForApprovalTimes}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####&nbsp;&nbsp;${pageApproveTimes}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####################################################################</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####################################################################</td>
+	<td></td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+<!---->
+</tbody></table>
+</body>
+</html>

@@ -16,31 +16,13 @@
 <!--TEST CASE: Tests DeakinSync staff login page in Squiz Matrix-->
 <!--TEST IDs: DS01-->
 <!---->
-<!--These tests will be run in the following domain: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/site-admin/squiz-matrix-for-staff</td>
-	<td>target_page</td>
-</tr>
-<!---->
 <!--################-->
-<!---->
 <!---->
 <!--# TEST ID: DS01-->
 <!--Check the page is available-->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${target_page}</td>
+	<td>${deakinsync_targetPageURL}</td>
 	<td></td>
 </tr>
 <tr>
@@ -56,7 +38,6 @@
 <!---->
 <!--Test complete-->
 <!---->
-
 </tbody></table>
 </body>
 </html>

@@ -16,46 +16,23 @@
 <!--TEST CASE: Tests that restricted plugins not available in the WYSIWYG editor-->
 <!--TEST IDs: BA01-->
 <!---->
-<!--These tests will be run in the following domain: -->
-<tr>
-	<td>store</td>
-	<td>www-cms-uat.deakin.edu.au</td>
-	<td>domain</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>1092</td>
-	<td>test_asset_id</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>1604</td>
-	<td>test_asset_body_div_id</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>/_admin/?SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;assetid=${test_asset_id}&amp;asset_ei_screen=contents&amp;SQ_BACKEND_PAGE=main</td>
-	<td>edit_screen</td>
-</tr>
-<!---->
 <!--################-->
 <!---->
 <tr>
 	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${edit_screen}</td>
+	<td>${basic_content_authoring_editScreen}</td>
 	<td></td>
 </tr>
 <!---->
-<!--# TEST ID: BA01-->
-<!--Check the plugins and tools-->
+<!--Acquire locks-->
+<tr>
+	<td>selectFrame</td>
+	<td>sq_main</td>
+	<td></td>
+</tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//input[@id='']</td>
+	<td>//input[@value='Acquire Lock(s)']</td>
 	<td></td>
 </tr>
 <tr>
@@ -65,12 +42,20 @@
 </tr>
 <tr>
 	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: BA01-->
+<!--Check the plugins and tools-->
+<tr>
+	<td>selectFrame</td>
 	<td>sq_main</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAt</td>
-	<td>css=#bodycopy_${test_asset_id}_content_type_wysiwyg_${test_asset_body_div_id}_contents_div_viper</td>
+	<td>css=#bodycopy_${basic_content_authoring_testAssetID}_content_type_wysiwyg_${basic_content_authoring_testAsset_bodyDivID}_contents_div_viper</td>
 	<td></td>
 </tr>
 <tr>
@@ -117,11 +102,26 @@
 <!--Release the lock-->
 <tr>
 	<td>clickAndWait</td>
+	<td>//input[@value='Release Lock(s)']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
 	<td>//input[@id='']</td>
+	<td>Acquire Lock(s)</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
 	<td></td>
 </tr>
 <!---->
 <!--Test complete-->
+<tr>
+	<td>open</td>
+	<td>${admin_ui_url}</td>
+	<td></td>
+</tr>
 <!---->
 </tbody></table>
 </body>
