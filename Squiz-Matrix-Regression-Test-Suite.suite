@@ -23,6 +23,7 @@
 <tr><td><a href="easy-edit-suite--create-new-page-regular-user.case">easy-edit-suite--create-new-page-regular-user</a></td></tr>
 <tr><td><a href="content-tools--lead-text-tool.case">content-tools--lead-text-tool</a></td></tr>
 <tr><td><a href="content-tools--content-section-tool.case">content-tools--content-section-tool</a></td></tr>
+<tr><td><a href="content-tools--content-section-tool-wells.case">content-tools--content-section-tool-wells</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-reject.case">workflow--basic-workflow-reject</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-approve.case">workflow--basic-workflow-approve</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-self-approve.case">workflow--basic-workflow-self-approve</a></td></tr>
