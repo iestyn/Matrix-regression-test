@@ -91,6 +91,11 @@
 <!---->
 <!--Try and add another-->
 <tr>
+	<td>waitForVisible</td>
+	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
 	<td></td>
@@ -116,14 +121,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyText</td>
-	<td>id=ees_greyOutMessage</td>
-	<td>You can embed a maximum of 1 Lead Text tools on a page.Continue</td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>link=lead_textLead Text: *</td>
 	<td>lead_textLead Text: Introduction section to your page. You can embed one of these on any given page.</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=ees_greyOutMessage</td>
+	<td>You can embed a maximum of 1 Lead Text tools on a page.Continue</td>
 </tr>
 <tr>
 	<td>click</td>

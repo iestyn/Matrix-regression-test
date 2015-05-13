@@ -111,22 +111,7 @@
 </tr>
 <tr>
 	<td>click</td>
-	<td>//a[@id=&quot;ees_screenMenudetailsDefault&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>css=h3.sectionHeading</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyText</td>
-	<td>css=h3.sectionHeading</td>
-	<td>Content</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
+	<td>//a[@id=&quot;ees_screenMenumetadataDefault&quot;]</td>
 	<td></td>
 </tr>
 <tr>

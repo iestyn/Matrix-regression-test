@@ -76,11 +76,6 @@
 <!--# TEST ID: WF01-->
 <!--Check can apply for approval-->
 <tr>
-	<td>waitforvisible</td>
-	<td>id=ees_safeEditButton</td>
-	<td></td>
-</tr>
-<tr>
 	<td>click</td>
 	<td>id=ees_safeEditButton</td>
 	<td></td>
