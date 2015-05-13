@@ -8,7 +8,7 @@
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
-<tr><td><a href="test-environment-variables">test-environment-variables</a></td></tr>
+<tr><td><a href="test-environment-variables.case">test-environment-variables</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--ldap-integration.case">ldap-user-groups-and-permissions--LDAP-integration</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--ui-restrictions-regular-user.case">ldap-user-groups-and-permissions--ui-restrictions-regular-user</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--asset-permissions.case">ldap-user-groups-and-permissions--asset-permissions</a></td></tr>
