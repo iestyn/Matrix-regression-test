@@ -99,6 +99,8 @@
 	<td>newWellAssetID</td>
 </tr>
 <!---->
+<!--Add content to the well-->
+<!---->
 <!--Format the well-->
 <tr>
 	<td>click</td>
@@ -258,7 +260,6 @@
 <!---->
 <!--Test complete-->
 <!---->
-
 </tbody></table>
 </body>
 </html>

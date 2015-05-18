@@ -20,6 +20,11 @@
 <!---->
 <tr>
 	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
 	<td>${workflow_permissions_testPageEditContentScreenURL}</td>
 	<td></td>
 </tr>
@@ -117,6 +122,16 @@
 	<td>store</td>
 	<td>javascript{new String(storedVars.content_tools_basic_test_pageAssetEditScreen).replace(/\/_edit.*/i,'')}</td>
 	<td>content_tools_basic_test_pageAssetURL</td>
+</tr>
+<tr>
+	<td>assertEval</td>
+	<td>javascript{storedVars.content_tools_basic_test_pageAssetEditScreen != storedVars.workflow_permissions_testPageEditContentScreenURL}</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>javascript{storedVars.content_tools_basic_test_pageAssetEditScreen != storedVars.workflow_permissions_testPageEditContentScreenURL}</td>
+	<td></td>
 </tr>
 <!---->
 <!--Test complete-->

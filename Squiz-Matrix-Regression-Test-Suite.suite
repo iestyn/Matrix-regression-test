@@ -13,7 +13,8 @@
 <tr><td><a href="ldap-user-groups-and-permissions--ui-restrictions-regular-user.case">ldap-user-groups-and-permissions--ui-restrictions-regular-user</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--asset-permissions.case">ldap-user-groups-and-permissions--asset-permissions</a></td></tr>
 <tr><td><a href="ldap-performance--caching-configuration.case">ldap-performance--caching-configuration</a></td></tr>
-<tr><td><a href="ldap-performance--caching-latency.case">ldap-performance--caching-latency</a></td></tr>
+<tr><td><a href="ldap-performance--page-function-latency.case">ldap-performance--page-function-latency</a></td></tr>
+<tr><td><a href="ldap-performance--ldap-lookup-latency.case">ldap-performance--ldap-lookup-latency</a></td></tr>
 <tr><td><a href="basic-content-authoring.case">basic-content-authoring</a></td></tr>
 <tr><td><a href="easy-edit-suite--basic-features.case">easy-edit-suite--basic-features</a></td></tr>
 <tr><td><a href="easy-edit-suite--basic-features-regular-user.case">easy-edit-suite--basic-features-regular-user</a></td></tr>

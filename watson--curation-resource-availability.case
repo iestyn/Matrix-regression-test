@@ -18,6 +18,22 @@
 <!---->
 <!--################-->
 <!---->
+<tr>
+	<td>store</td>
+	<td>73273</td>
+	<td>xml_test_string</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>&quot;assetid&quot;:&quot;73273&quot; *</td>
+	<td>json_test_string</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>assetid,url,last mod,last pub,ingestable,status*</td>
+	<td>csv_test_string</td>
+</tr>
+<!---->
 <!--# TEST ID: W03-->
 <!--Check Watson metadata scheme applied to random asset-->
 <tr>
@@ -39,24 +55,106 @@
 <!--# TEST ID: W01-->
 <!--Check watson-sitemap-->
 <tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startTime</td>
+</tr>
+<tr>
 	<td>open</td>
 	<td>${watson_sitemap_xmlPageURL}</td>
 	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>xmlPageLoadTime</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>//*</td>
+	<td>${xml_test_string}</td>
 </tr>
 <!---->
 <!--# TEST ID: W02-->
 <!--Check watson-sitemap-json-->
 <tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startTime</td>
+</tr>
+<tr>
 	<td>open</td>
 	<td>${watson_sitemap_jsonPageURL}</td>
 	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>jsonPageLoadTime</td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>//*</td>
+	<td>${json_test_string}</td>
 </tr>
 <!---->
 <!--# TEST ID: W04-->
 <!--Check watson-sitemap-csv-->
 <tr>
+	<td>storeEval</td>
+	<td>new Date().getTime();</td>
+	<td>startTime</td>
+</tr>
+<tr>
 	<td>open</td>
 	<td>${watson_sitemap_csvPageURL}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeEval</td>
+	<td>new Date().getTime() - storedVars['startTime']</td>
+	<td>csvPageLoadTime</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//*</td>
+	<td>${csv_test_string}</td>
+</tr>
+<!---->
+<!--Report timings-->
+<tr>
+	<td>echo</td>
+	<td>####################################################################</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####################################################################</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####&nbsp;&nbsp;Watson curation resource latencies</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####&nbsp;&nbsp;xmlPageLoadTime, jsonPageLoadTime, csvPageLoadTime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####&nbsp;&nbsp;${xmlPageLoadTime}, ${jsonPageLoadTime}, ${csvPageLoadTime}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####################################################################</td>
+	<td></td>
+</tr>
+<tr>
+	<td>echo</td>
+	<td>####################################################################</td>
 	<td></td>
 </tr>
 <!---->

@@ -50,6 +50,21 @@
 	<td>crispd</td>
 	<td>business_authorUsername</td>
 </tr>
+<tr>
+	<td>store</td>
+	<td>${host}/site-admin/workflow-and-permissions-testing/workflow-test-page</td>
+	<td>workflow_and_permissions_pageURL</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${host}/site-admin/workflow-and-permissions-testing/ldap-cache-testing/ldap-caching-performance-test-page</td>
+	<td>ldap_caching_performance_pageURL</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${host}/site-admin/workflow-and-permissions-testing/ldap-cache-testing/squiz-matrix-access-groups</td>
+	<td>squiz_matrix_access_groups_pageURL</td>
+</tr>
 <!--###-->
 <!---->
 <!--### ldap-user-groups-and-permissions--LDAP-integration-->
@@ -124,7 +139,7 @@
 </tr>
 <!--###-->
 <!---->
-<!--### ldap-perfomance--caching-latency-->
+<!--### ldap-performance--page-function-latency-->
 <tr>
 	<td>store</td>
 	<td>On*</td>
@@ -137,7 +152,7 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>${host}/site-admin/workflow-and-permissions-testing/ldap-cache-testing/ldap-caching-performance-test-page</td>
+	<td>${ldap_caching_performance_pageURL}</td>
 	<td>ldap_cache_testAssetUrl</td>
 </tr>
 <tr>
@@ -155,7 +170,7 @@
 	<td>${workflow_permissions_authorUsername}</td>
 	<td>ldap_cache_testContentAuthor</td>
 </tr>
-<!--### ldap-performance--caching-latency (Dev environment only)-->
+<!--### ldap-performance--page-function-latency (Dev environment only)-->
 <tr>
 	<td>store</td>
 	<td>279626</td>
@@ -172,6 +187,13 @@
 	<td>ldap_cache_testContentAuthor_DEV</td>
 </tr>
 <!--###-->
+<!---->
+<!--### ldap-perfomance--ldap-lookup-latency-->
+<tr>
+	<td>store</td>
+	<td>${squiz_matrix_access_groups_pageURL}</td>
+	<td>ldap_cache_lookup_testAssetUrl</td>
+</tr>
 <!---->
 <!--### basic-content-authoring-->
 <tr>
@@ -203,7 +225,7 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>${host}/site-admin/workflow-and-permissions-testing/workflow-test-page</td>
+	<td>${workflow_permissions_testPageURL}</td>
 	<td>basic_features_test_pageURL</td>
 </tr>
 <tr>
@@ -215,7 +237,7 @@
 <!--### easy-edit-suite--basic-editing-->
 <tr>
 	<td>store</td>
-	<td>${host}/site-admin/workflow-and-permissions-testing/workflow-test-page</td>
+	<td>${workflow_and_permissions_pageURL}</td>
 	<td>basic_editing_AssetURL</td>
 </tr>
 <tr>
@@ -286,11 +308,6 @@
 <!--### workflow--basic-workflow-approve-->
 <tr>
 	<td>store</td>
-	<td>${host}/site-admin/workflow-and-permissions-testing/workflow-test-page</td>
-	<td>workflow_permissions_testPageURL</td>
-</tr>
-<tr>
-	<td>store</td>
 	<td>35986</td>
 	<td>workflow_permissions_test_pageAssetID</td>
 </tr>
@@ -303,6 +320,11 @@
 	<td>store</td>
 	<td>578791</td>
 	<td>workflow_permissions_test_page_bodycopyDivID</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${workflow_and_permissions_pageURL}</td>
+	<td>workflow_permissions_testPageURL</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -376,6 +398,37 @@
 <!---->
 <!--################-->
 <!---->
+<!--### Now log in before doing any tests-->
+<tr>
+	<td>open</td>
+	<td>${basic_content_authoring_editScreen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${basic_features_test_pageEditScreen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>
