@@ -55,7 +55,7 @@
 </tr>
 <tr>
 	<td>clickAt</td>
-	<td>css=#bodycopy_${basic_content_authoring_testAssetID}_content_type_wysiwyg_${basic_content_authoring_testAsset_bodyDivID}_contents_div_viper</td>
+	<td>css=#bodycopy_${basic_content_authoring_testAssetID}_content_type_wysiwyg_${basic_content_authoring_testAsset_bodyDivID}_contents_div_viper &gt; p</td>
 	<td></td>
 </tr>
 <tr>

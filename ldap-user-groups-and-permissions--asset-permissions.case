@@ -32,18 +32,18 @@
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>//table[@id='backend_section_8']/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[2]/td/span</td>
-	<td>${ldap_permissions_contentAuthor}</td>
+	<td>//div[@id='asset-tag-line-${ldap_permissions_contentAuthor_assetID}-more-details']/following-sibling::span[@class='sq-info-asset-name sq-tag-line']/span[@class=&quot;sq-info-assetid&quot;]</td>
+	<td>${ldap_permissions_contentAuthor_assetID}</td>
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>//table[@id='backend_section_11']/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[2]/td/span</td>
-	<td>${ldap_permissions_changeApprover}</td>
+	<td>//div[@id='asset-tag-line-${ldap_permissions_changeApprover_assetID}-more-details']/following-sibling::span[@class='sq-info-asset-name sq-tag-line']/span[@class=&quot;sq-info-assetid&quot;]</td>
+	<td>${ldap_permissions_changeApprover_assetID}</td>
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>//table[@id='backend_section_11']/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[3]/td/span</td>
-	<td>${ldap_permissions_webPlanner}</td>
+	<td>//div[@id='asset-tag-line-${ldap_permissions_webPlanner_assetID}-more-details']/following-sibling::span[@class='sq-info-asset-name sq-tag-line']/span[@class=&quot;sq-info-assetid&quot;]</td>
+	<td>*${ldap_permissions_webPlanner_assetID}*</td>
 </tr>
 <!---->
 <!--# TEST ID: L04-->
@@ -60,18 +60,13 @@
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>//table[@id='backend_section_4']/tbody/tr[2]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[2]/span</td>
-	<td>${ldap_permissions_webPlanner}</td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>name=sq_main</td>
-	<td></td>
+	<td>//div[@id='asset-tag-line-${ldap_permissions_webPlanner_assetID}-more-details']/following-sibling::span[@class='sq-info-asset-name sq-tag-line']/span[@class=&quot;sq-info-assetid&quot;]</td>
+	<td>${ldap_permissions_webPlanner_assetID}</td>
 </tr>
 <tr>
 	<td>verifyText</td>
-	<td>//table[@id='backend_section_4']/tbody/tr[2]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/span</td>
-	<td>${ldap_permissions_changeApprover}</td>
+	<td>//div[@id='asset-tag-line-${ldap_permissions_changeApprover_assetID}-more-details']/following-sibling::span[@class='sq-info-asset-name sq-tag-line']/span[@class=&quot;sq-info-assetid&quot;]</td>
+	<td>${ldap_permissions_changeApprover_assetID}</td>
 </tr>
 <!---->
 <!---->

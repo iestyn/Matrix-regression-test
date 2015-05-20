@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<!--################-->
+<!--TEST SUITE ENVIRONMENT VARIABLES-->
+<!---->
+<!--###-->
+<!--### Only load these variables if testing the dev environment-->
+<tr>
+	<td>gotoIf</td>
+	<td>&quot;${env_under_test}&quot;!=&quot;dev&quot;</td>
+	<td>end_dev_env_variables</td>
+</tr>
+<!---->
+<!--###-->
+<!--### Environment specific variables and asset IDs-->
+<tr>
+	<td>store</td>
+	<td>http://www-cms-dev.deakin.edu.au</td>
+	<td>host</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${host}/_admin</td>
+	<td>admin_ui_url</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${host}/_edit</td>
+	<td>edit_ui_url</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
+	<td>3055</td>
+	<td>ldap_bridge_assetid</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${ldap_bridge_assetid}:cn=acg-squizadmins,ou=Accessgroups,dc=deakin,dc=edu,dc=au</td>
+	<td>ldap_squizadmins_group_assetid</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>squiz_v3</td>
+	<td>workflow_permissions_authorUsername</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>crispd</td>
+	<td>business_authorUsername</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
+	<td>${host}/site-admin/testing/workflow-and-permissions-testing/workflow-test-page</td>
+	<td>workflow_test_page_URL</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>35986</td>
+	<td>workflow_test_page_assetID</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>35987</td>
+	<td>workflow_test_page_pageContentsID</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>578791</td>
+	<td>workflow_test_page_bodycopyDivID</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
+	<td>${host}/site-admin/testing/workflow-and-permissions-testing/ldap-cache-testing/ldap-caching-performance-test-page</td>
+	<td>ldap_caching_performance_test_page_URL</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>360123</td>
+	<td>ldap_caching_performance_test_page_assetID</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>360124</td>
+	<td>ldap_caching_performance_test_page_bodyDivID</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
+	<td>${host}/site-admin/testing/workflow-and-permissions-testing/ldap-cache-testing/squiz-matrix-access-groups</td>
+	<td>squiz_matrix_access_groups_page_URL</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
+	<td>19523</td>
+	<td>learning_at_deakin_page_assetID</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>19548</td>
+	<td>learning_at_deakin_page_contentAuthor_assetID</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>19562</td>
+	<td>learning_at_deakin_page_changeApprover_assetID</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>19563</td>
+	<td>learning_at_deakin_page_webPlanner_assetID</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
+	<td>1092</td>
+	<td>privacy_page_assetID</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>1604</td>
+	<td>privacy_page_bodycopyDivID</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
+	<td>296502</td>
+	<td>stay_informed_assetID</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
+	<td>185</td>
+	<td>study-at-deakin-assetID</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
+	<td>81393</td>
+	<td>deakinsync_web_service_assetID</td>
+</tr>
+<!--###-->
+<!---->
+<!--################-->
+<tr>
+	<td>label</td>
+	<td>end_dev_env_variables</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

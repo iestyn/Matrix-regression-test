@@ -11,66 +11,17 @@
 <tr><td rowspan="1" colspan="3">New Test</td></tr>
 </thead><tbody>
 <!--################-->
-<!--TEST SUITE ENVIRONMENT VARIABLES-->
+<!--TEST SUITE VARIABLES-->
 <!---->
-<!--###-->
-<!--### Environment variables-->
-<tr>
-	<td>store</td>
-	<td>http://www-cms-uat.deakin.edu.au</td>
-	<td>host</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>3055</td>
-	<td>ldap_bridge_assetid</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${ldap_bridge_assetid}:cn=acg-squizadmins,ou=Accessgroups,dc=deakin,dc=edu,dc=au</td>
-	<td>ldap_squizadmins_group_assetid</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${host}/_admin</td>
-	<td>admin_ui_url</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${host}/_edit</td>
-	<td>edit_ui_url</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>squiz_v3</td>
-	<td>workflow_permissions_authorUsername</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>crispd</td>
-	<td>business_authorUsername</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${host}/site-admin/workflow-and-permissions-testing/workflow-test-page</td>
-	<td>workflow_and_permissions_pageURL</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${host}/site-admin/workflow-and-permissions-testing/ldap-cache-testing/ldap-caching-performance-test-page</td>
-	<td>ldap_caching_performance_pageURL</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${host}/site-admin/workflow-and-permissions-testing/ldap-cache-testing/squiz-matrix-access-groups</td>
-	<td>squiz_matrix_access_groups_pageURL</td>
-</tr>
+<!--Variables used in the following test cases. -->
+<!--Don't put any environment specific magic numbers in here - put them in the env specific variable cases.-->
+<!---->
 <!--###-->
 <!---->
 <!--### ldap-user-groups-and-permissions--LDAP-integration-->
 <tr>
 	<td>store</td>
-	<td>${ldap_squizadmins_group_assetid}</td>
+	<td>${ldap_test_group_assetid}</td>
 	<td>ldap_integration_groupAssetid</td>
 </tr>
 <tr>
@@ -78,17 +29,12 @@
 	<td>${admin_ui_url}?assetid=${ldap_integration_groupAssetid}&amp;asset_ei_screen=details&amp;backend_section=am&amp;am_section=edit_asset&amp;backend_section=am</td>
 	<td>ldap_integration_groupUrl</td>
 </tr>
-<tr>
-	<td>store</td>
-	<td>acg-squizadmins</td>
-	<td>ldap_integration_groupName</td>
-</tr>
 <!--###-->
 <!---->
 <!--### ldap-user-groups-and-permissions--ui-restrictions-regular-user -->
 <tr>
 	<td>store</td>
-	<td>${business_authorUsername}</td>
+	<td>${business_author_username}</td>
 	<td>ldap_integration_authorUsername</td>
 </tr>
 <!--###-->
@@ -96,7 +42,7 @@
 <!--### ldap-user-groups-and-permissions--asset-permissions-->
 <tr>
 	<td>store</td>
-	<td>19523</td>
+	<td>${learning_at_deakin_page_assetID}</td>
 	<td>ldap_permissions_assetid</td>
 </tr>
 <tr>
@@ -111,18 +57,18 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>Learning Content Author (Id: #19548)</td>
-	<td>ldap_permissions_contentAuthor</td>
+	<td>${learning_at_deakin_page_contentAuthor_assetID}</td>
+	<td>ldap_permissions_contentAuthor_assetID</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>Learning Change Approver (Id: #19562)</td>
-	<td>ldap_permissions_changeApprover</td>
+	<td>${learning_at_deakin_page_changeApprover_assetID}</td>
+	<td>ldap_permissions_changeApprover_assetID</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>Learning Web Planner (Id: #19563)</td>
-	<td>ldap_permissions_webPlanner</td>
+	<td>${learning_at_deakin_page_webPlanner_assetID}</td>
+	<td>ldap_permissions_webPlanner_assetID</td>
 </tr>
 <!--###-->
 <!---->
@@ -157,53 +103,37 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>298999</td>
+	<td>${ldap_caching_performance_test_page_assetID}</td>
 	<td>ldap_cache_testAssetID</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>299000</td>
+	<td>${ldap_caching_performance_test_page_bodyDivID}</td>
 	<td>ldap_cache_testAsset_bodyDivID</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>${workflow_permissions_authorUsername}</td>
+	<td>${content_author_username}</td>
 	<td>ldap_cache_testContentAuthor</td>
-</tr>
-<!--### ldap-performance--page-function-latency (Dev environment only)-->
-<tr>
-	<td>store</td>
-	<td>279626</td>
-	<td>ldap_cache_testAssetID_DEV</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>279627</td>
-	<td>ldap_cache_testAsset_bodyDivID_DEV</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${workflow_permissions_authorUsername}</td>
-	<td>ldap_cache_testContentAuthor_DEV</td>
 </tr>
 <!--###-->
 <!---->
 <!--### ldap-perfomance--ldap-lookup-latency-->
 <tr>
 	<td>store</td>
-	<td>${squiz_matrix_access_groups_pageURL}</td>
+	<td>${squiz_matrix_access_groups_page_URL}</td>
 	<td>ldap_cache_lookup_testAssetUrl</td>
 </tr>
 <!---->
 <!--### basic-content-authoring-->
 <tr>
 	<td>store</td>
-	<td>1092</td>
+	<td>${privacy_page_assetID}</td>
 	<td>basic_content_authoring_testAssetID</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>1604</td>
+	<td>${privacy_page_bodycopyDivID}</td>
 	<td>basic_content_authoring_testAsset_bodyDivID</td>
 </tr>
 <tr>
@@ -220,12 +150,12 @@
 <!--### basic-features-->
 <tr>
 	<td>store</td>
-	<td>${business_authorUsername}</td>
+	<td>${business_author_username}</td>
 	<td>basic_features_authorUsername</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>${workflow_permissions_testPageURL}</td>
+	<td>${workflow_test_page_URL}</td>
 	<td>basic_features_test_pageURL</td>
 </tr>
 <tr>
@@ -237,27 +167,27 @@
 <!--### easy-edit-suite--basic-editing-->
 <tr>
 	<td>store</td>
-	<td>${workflow_and_permissions_pageURL}</td>
+	<td>${workflow_test_page_URL}</td>
 	<td>basic_editing_AssetURL</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>${workflow_permissions_test_pageAssetID}</td>
+	<td>${workflow_test_page_assetID}</td>
 	<td>basic_editing_AssetID</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>${workflow_permissions_test_page_pageContentsID}</td>
+	<td>${workflow_test_page_pageContentsID}</td>
 	<td>basic_editing_AssetID_pageContentsID</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>${workflow_permissions_test_page_bodycopyDivID}</td>
+	<td>${workflow_test_page_bodycopyDivID}</td>
 	<td>basic_editing_AssetID_bodycopyDivID</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>${workflow_permissions_authorUsername}</td>
+	<td>${content_author_username}</td>
 	<td>basic_editing_contentAuthor</td>
 </tr>
 <tr>
@@ -267,39 +197,8 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>296502</td>
+	<td>${stay_informed_assetID}</td>
 	<td>basic_editing_stayInformedAssetID</td>
-</tr>
-<!--### easy-edit-suite--basic-editing (Dev environment only)-->
-<tr>
-	<td>store</td>
-	<td>35986</td>
-	<td>basic_editing_AssetID_DEV</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>35987</td>
-	<td>basic_editing_AssetID_pageContentsID_DEV</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>563129</td>
-	<td>basic_editing_AssetID_bodycopyDivID_DEV</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${workflow_permissions_authorUsername}</td>
-	<td>basic_editing_contentAuthor_DEV</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>css=img.Logo-image</td>
-	<td>basic_editing_mainLogo_DEV</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>278835</td>
-	<td>basic_editing_stayInformedAssetID_DEV</td>
 </tr>
 <!--###-->
 <!---->
@@ -308,23 +207,23 @@
 <!--### workflow--basic-workflow-approve-->
 <tr>
 	<td>store</td>
-	<td>35986</td>
+	<td>${workflow_test_page_URL}</td>
+	<td>workflow_permissions_testPageURL</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${workflow_test_page_assetID}</td>
 	<td>workflow_permissions_test_pageAssetID</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>35987</td>
+	<td>${workflow_test_page_pageContentsID}</td>
 	<td>workflow_permissions_test_page_pageContentsID</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>578791</td>
+	<td>${workflow_test_page_bodycopyDivID}</td>
 	<td>workflow_permissions_test_page_bodycopyDivID</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${workflow_and_permissions_pageURL}</td>
-	<td>workflow_permissions_testPageURL</td>
 </tr>
 <tr>
 	<td>store</td>
@@ -355,7 +254,7 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>185</td>
+	<td>${study_at_deakin_assetID}</td>
 	<td>watson_ingest_metadataTestPageAssetID</td>
 </tr>
 <tr>
@@ -376,7 +275,7 @@
 <!--### deakin-sync--integration-service-->
 <tr>
 	<td>store</td>
-	<td>81393</td>
+	<td>${deakinsync_web_service_assetID}</td>
 	<td>deakinsync_web_service_assetID</td>
 </tr>
 <tr>
@@ -396,9 +295,7 @@
 </tr>
 <!--###-->
 <!---->
-<!--################-->
-<!---->
-<!--### Now log in before doing any tests-->
+<!--### Now make sure you're logged in before doing any tests-->
 <tr>
 	<td>open</td>
 	<td>${basic_content_authoring_editScreen}</td>
@@ -429,6 +326,7 @@
 	<td>http://www.google.com</td>
 	<td></td>
 </tr>
+<!---->
 </tbody></table>
 </body>
 </html>

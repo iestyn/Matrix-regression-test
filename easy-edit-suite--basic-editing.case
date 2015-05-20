@@ -105,8 +105,8 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>css=#form_email_${basic_editing_stayInformedAssetID} &gt; h3.FooterMain-heading</td>
+	<td>verifyText</td>
+	<td>//div[@class=&quot;block StayInformed&quot;]/form/h3[@class=&quot;FooterMain-heading&quot;]</td>
 	<td>Stay informed</td>
 </tr>
 <tr>

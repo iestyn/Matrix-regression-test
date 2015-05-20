@@ -29,7 +29,7 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>0</td>
+	<td>5</td>
 	<td>numberRuns</td>
 </tr>
 <tr>
@@ -92,14 +92,14 @@
 	<td></td>
 </tr>
 <tr>
-	<td>waitForText</td>
-	<td>id=sq-menu-tab-my_space</td>
-	<td>My Account</td>
-</tr>
-<tr>
 	<td>selectFrame</td>
 	<td>relative=top</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
 </tr>
 <!---->
 <!--# TEST ID: LC02-1-->
