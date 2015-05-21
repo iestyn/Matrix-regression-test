@@ -22,6 +22,11 @@
 <!---->
 <tr>
 	<td>open</td>
+	<td>${workflow_permissions_testPageURL}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
 	<td>${workflow_permissions_testPageURL}/_edit#mode=edit&amp;screen=details</td>
 	<td></td>
 </tr>

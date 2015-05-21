@@ -98,7 +98,7 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>${ldap_caching_performance_pageURL}</td>
+	<td>${ldap_caching_performance_test_page_URL}</td>
 	<td>ldap_cache_testAssetUrl</td>
 </tr>
 <tr>
@@ -234,6 +234,11 @@
 	<td>store</td>
 	<td>javascript{'New asset - ' + ((new Date()).getFullYear()+1) + '-' +&nbsp;&nbsp;((new Date()).getMonth()+1) + '-' + ((new Date()).getDate()+1)}</td>
 	<td>workflow_permissions_newPageName</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${content_author_username}</td>
+	<td>workflow_permissions_authorUsername</td>
 </tr>
 <!---->
 <!--### watson--curation-resource-availability-->

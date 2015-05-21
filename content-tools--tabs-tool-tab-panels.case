@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>content-tools--tabs-tool-tab-panels</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">content-tools--tabs-tool-tab-panels</td></tr>
+</thead><tbody>
+<!--CATEGORY: Content Tools-->
+<!--TEST CASE: Tests the tabs tool tab panels-->
+<!--TEST IDs: CT05-->
+<!---->
+<!--EXTRA INSTRUCTION: Requires easy-edit-suite--create-new-page.case to be executed first!-->
+<!--EXTRA INSTRUCTION: Requires content-tools--tabs-tool.case to be executed first!-->
+<!---->
+<!--################-->
+<!---->
+<tr>
+	<td>open</td>
+	<td>${content_tools_basic_test_pageAssetURL}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${content_tools_basic_test_pageAssetURL}/_edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: CT05-->
+<!--Try and add a tab-->
+<tr>
+	<td>click</td>
+	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeCssCount</td>
+	<td>css=.ui-tabs-title</td>
+	<td>originalNumberOfTabs</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/a[@title=&quot;Add a new tab&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=.ui-tabs-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeCssCount</td>
+	<td>css=.ui-tabs-title</td>
+	<td>currentNumberOfTabs</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>${originalNumberOfTabs} + 1</td>
+	<td>${currentNumberOfTabs}</td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/div/ul/li[last()]@data-tab-nav-id</td>
+	<td>newTabAssetID</td>
+</tr>
+<!---->
+<!--Reposition the tab-->
+<tr>
+	<td>click</td>
+	<td>//li[@data-tab-nav-id=&quot;${newTabAssetID}&quot;]/a[@class=&quot;bodycopy_re_order icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//li[contains(@class,&quot;child-${newTabAssetID}&quot;)]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>dragAndDropToObject</td>
+	<td>//li[contains(@class,&quot;child-${newTabAssetID}&quot;)]/a</td>
+	<td>//li[contains(@class,&quot;child-${newTabAssetID}&quot;)]/parent::ul/li[1]</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_reorderOverlay_save</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/div/ul/li[1]@data-tab-nav-id</td>
+	<td>${newTabAssetID}</td>
+</tr>
+<!---->
+<!--Rename the tab-->
+<tr>
+	<td>click</td>
+	<td>//li[@data-tab-nav-id=&quot;${newTabAssetID}&quot;]/a[@title=&quot;Edit Container Properties&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=${newTabAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=${newTabAssetID}</td>
+	<td>New Tab</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit_properties_ok_${newTabAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//a[@href=&quot;#tabs-${newTabAssetID}&quot;]</td>
+	<td>New Tab</td>
+</tr>
+<!---->
+<!--Delete the tab-->
+<tr>
+	<td>waitForVisible</td>
+	<td>//li[@data-tab-nav-id=&quot;${newTabAssetID}&quot;]/a[@class=&quot;bodycopy_delete icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//li[@data-tab-nav-id=&quot;${newTabAssetID}&quot;]/a[@class=&quot;bodycopy_delete icon&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>//li[contains(@class,&quot;child-${newTabAssetID}&quot;)]</td>
+	<td></td>
+</tr>
+<!---->
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

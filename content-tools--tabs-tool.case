@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>content-tools--tabs-tool</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">content-tools--tabs-tool</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: Content Tools-->
+<!--TEST CASE: Tests the tabs tool-->
+<!--TEST IDs: CT04-->
+<!---->
+<!--EXTRA INSTRUCTION: Requires easy-edit-suite--create-new-page.case to be executed first!-->
+<!---->
+<!--################-->
+<!---->
+<tr>
+	<td>open</td>
+	<td>${content_tools_basic_test_pageAssetURL}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${content_tools_basic_test_pageAssetURL}/_edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: CT04-->
+<!--Add a tab tool-->
+<tr>
+	<td>click</td>
+	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add Content Tool</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.tabs.assetToCreate &gt; span.buttonContent</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>//div[@data-content-tool=&quot;tabs&quot;]@data-folder-id</td>
+	<td>newTabsAssetID</td>
+</tr>
+<!---->
+<!--Delete the tool-->
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/a[@title=&quot;Delete Container&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
+<!--Add another tab tool-->
+<tr>
+	<td>click</td>
+	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add Content Tool</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.tabs.assetToCreate &gt; span.buttonContent</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=confirmButton</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeAttribute</td>
+	<td>//div[@data-content-tool=&quot;tabs&quot;]@data-folder-id</td>
+	<td>newTabsAssetID</td>
+</tr>
+<!---->
+<!--Try and add a second tab tool-->
+<tr>
+	<td>click</td>
+	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Add Content Tool</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.tabs.assetToCreate &gt; span.buttonContent</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=ees_greyOutMessage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=ees_greyOutMessage</td>
+	<td>You can embed a maximum of 1 Tabs tools on a page.Continue</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=ees_greyOutContinue</td>
+	<td></td>
+</tr>
+<!---->
+<!--Format the tool-->
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/a[@title=&quot;Edit Container Properties&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=toolSizeSelect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=toolSizeSelect</td>
+	<td>label=One third</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit_properties_ok_${newTabsAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]@class</td>
+	<td>*span-one-third*</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/a[@title=&quot;Edit Container Properties&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=toolSizeSelect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=toolSizeSelect</td>
+	<td>label=Full width</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit_properties_ok_${newTabsAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]@class</td>
+	<td>*span-full-width*</td>
+</tr>
+<!---->
+<!--Set the Id-->
+<tr>
+	<td>click</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/a[@title=&quot;Edit Container Properties&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=toolSizeSelect</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=${newTabAssetID}</td>
+	<td>New Tab</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit_properties_ok_${newTabsAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/span[@id=&quot;asset_name&quot;]</td>
+	<td>New Tab</td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

@@ -28,6 +28,8 @@
 <tr><td><a href="content-tools--lead-text-tool.case">content-tools--lead-text-tool</a></td></tr>
 <tr><td><a href="content-tools--content-section-tool.case">content-tools--content-section-tool</a></td></tr>
 <tr><td><a href="content-tools--content-section-tool-wells.case">content-tools--content-section-tool-wells</a></td></tr>
+<tr><td><a href="content-tools--tabs-tool.case">content-tools--tabs-tool</a></td></tr>
+<tr><td><a href="content-tools--tabs-tool-tab-panels.case">content-tools--tabs-tool-tab-panels</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-reject.case">workflow--basic-workflow-reject</a></td></tr>
 <tr><td><a href="workflow--basic-workflow-approve.case">workflow--basic-workflow-approve</a></td></tr>
 <tr><td><a href="workflow--review-dates.case">workflow--review-dates</a></td></tr>

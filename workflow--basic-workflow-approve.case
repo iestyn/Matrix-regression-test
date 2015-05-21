@@ -48,6 +48,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
+<tr>
 	<td>waitForText</td>
 	<td>id=sq-menu-tab-my_space</td>
 	<td>My Account</td>
@@ -201,7 +206,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p</td>
+	<td>id=ees_runningWorkflows</td>
 	<td>Not currently in workflow.</td>
 </tr>
 <!---->
