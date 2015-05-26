@@ -124,21 +124,6 @@
 <!--Add another Content section tool-->
 <tr>
 	<td>click</td>
-	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
 	<td>link=Add Content Tool</td>
 	<td></td>
 </tr>
@@ -174,21 +159,6 @@
 </tr>
 <!---->
 <!--Add a second Content section tool-->
-<tr>
-	<td>click</td>
-	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>link=Add Content Tool</td>

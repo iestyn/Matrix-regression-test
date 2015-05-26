@@ -120,23 +120,13 @@
 	<td>css=img[alt=&quot;Loading&quot;]</td>
 	<td></td>
 </tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]</td>
+	<td></td>
+</tr>
 <!---->
 <!--Add another tab tool-->
-<tr>
-	<td>click</td>
-	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
 <tr>
 	<td>click</td>
 	<td>link=Add Content Tool</td>
@@ -176,27 +166,7 @@
 <!--Try and add a second tab tool-->
 <tr>
 	<td>click</td>
-	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
 	<td>link=Add Content Tool</td>
-	<td></td>
-</tr>
-<tr>
-	<td>selectWindow</td>
-	<td>null</td>
 	<td></td>
 </tr>
 <tr>
@@ -299,14 +269,19 @@
 	<td></td>
 </tr>
 <tr>
+	<td>store</td>
+	<td>New Test Tab</td>
+	<td>new_tab_label</td>
+</tr>
+<tr>
 	<td>waitForVisible</td>
 	<td>id=toolSizeSelect</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=${newTabAssetID}</td>
-	<td>New Tab</td>
+	<td>id=${newTabsAssetID}</td>
+	<td>${new_tab_label}</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -326,7 +301,7 @@
 <tr>
 	<td>verifyText</td>
 	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/span[@id=&quot;asset_name&quot;]</td>
-	<td>New Tab</td>
+	<td>${new_tab_label}</td>
 </tr>
 <!---->
 <!--Test complete-->

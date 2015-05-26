@@ -108,6 +108,53 @@
 	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/div/ul/li[last()]@data-tab-nav-id</td>
 	<td>newTabAssetID</td>
 </tr>
+<tr>
+	<td>echo</td>
+	<td>${newTabAssetID}</td>
+	<td></td>
+</tr>
+<!---->
+<!--Rename the tab-->
+<tr>
+	<td>click</td>
+	<td>//li[@data-tab-nav-id=&quot;${newTabAssetID}&quot;]/a[@title=&quot;Edit Container Properties&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>New Test Tab</td>
+	<td>new_tab_label</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>id=${newTabAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=${newTabAssetID}</td>
+	<td>${new_tab_label}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=edit_properties_ok_${newTabAssetID}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//a[@href=&quot;#tabs-${newTabAssetID}&quot;]</td>
+	<td>${new_tab_label}</td>
+</tr>
 <!---->
 <!--Reposition the tab-->
 <tr>
@@ -121,9 +168,9 @@
 	<td></td>
 </tr>
 <tr>
-	<td>dragAndDropToObject</td>
-	<td>//li[contains(@class,&quot;child-${newTabAssetID}&quot;)]/a</td>
-	<td>//li[contains(@class,&quot;child-${newTabAssetID}&quot;)]/parent::ul/li[1]</td>
+	<td>dragAndDrop</td>
+	<td>css=li.child-${newTabAssetID}&gt;a</td>
+	<td>0,-300</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -144,43 +191,6 @@
 	<td>verifyAttribute</td>
 	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]/div/div/ul/li[1]@data-tab-nav-id</td>
 	<td>${newTabAssetID}</td>
-</tr>
-<!---->
-<!--Rename the tab-->
-<tr>
-	<td>click</td>
-	<td>//li[@data-tab-nav-id=&quot;${newTabAssetID}&quot;]/a[@title=&quot;Edit Container Properties&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>id=${newTabAssetID}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=${newTabAssetID}</td>
-	<td>New Tab</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=edit_properties_ok_${newTabAssetID}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>verifyText</td>
-	<td>//a[@href=&quot;#tabs-${newTabAssetID}&quot;]</td>
-	<td>New Tab</td>
 </tr>
 <!---->
 <!--Delete the tab-->
@@ -215,8 +225,13 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementNotPresent</td>
-	<td>//li[contains(@class,&quot;child-${newTabAssetID}&quot;)]</td>
+	<td>waitForVisible</td>
+	<td>//div[@data-folder-id=&quot;${newTabsAssetID}&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>css=li.child-${newTabAssetID}</td>
 	<td></td>
 </tr>
 <!---->
