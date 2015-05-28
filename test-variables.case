@@ -18,12 +18,11 @@
 <!--### Test Environment (either prod | uat | dev )-->
 <tr>
 	<td>store</td>
-	<td>uat</td>
+	<td>prod</td>
 	<td>env_under_test</td>
 </tr>
 <!--###-->
 <!---->
-
 </tbody></table>
 </body>
 </html>

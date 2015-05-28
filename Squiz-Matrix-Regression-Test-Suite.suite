@@ -11,6 +11,7 @@
 <tr><td><a href="test-variables.case">test-environment</a></td></tr>
 <tr><td><a href="test-variables-dev.case">test-variables-dev</a></td></tr>
 <tr><td><a href="test-variables-uat.case">test-variables-uat</a></td></tr>
+<tr><td><a href="test-variables-prod.case">test-variables-prod</a></td></tr>
 <tr><td><a href="test-environment-variables.case">test-variables</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--ldap-integration.case">ldap-user-groups-and-permissions--LDAP-integration</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--ui-restrictions-regular-user.case">ldap-user-groups-and-permissions--ui-restrictions-regular-user</a></td></tr>

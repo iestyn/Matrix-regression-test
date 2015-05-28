@@ -17,6 +17,16 @@
 <!--Don't put any environment specific magic numbers in here - put them in the env specific variable cases.-->
 <!---->
 <!--###-->
+<tr>
+	<td>store</td>
+	<td>${host}/_admin</td>
+	<td>admin_ui_url</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${host}/_edit</td>
+	<td>edit_ui_url</td>
+</tr>
 <!---->
 <!--### ldap-user-groups-and-permissions--LDAP-integration-->
 <tr>

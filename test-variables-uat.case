@@ -30,16 +30,6 @@
 </tr>
 <tr>
 	<td>store</td>
-	<td>${host}/_admin</td>
-	<td>admin_ui_url</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${host}/_edit</td>
-	<td>edit_ui_url</td>
-</tr>
-<tr>
-	<td>store</td>
 	<td>squiz_v3</td>
 	<td>content_author_username</td>
 </tr>
