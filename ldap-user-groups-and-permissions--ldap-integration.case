@@ -25,21 +25,26 @@
 </tr>
 <!---->
 <!--# TEST ID: L01 -->
-<!--Check for LDAP users-->
+<!--Check for an LDAP integration-->
 <tr>
 	<td>selectWindow</td>
 	<td>name=sq_main</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyElementPresent</td>
-	<td>//table[@id='backend_section_5']/tbody/tr[2]/td/table/tbody/tr[3]/td[2]</td>
-	<td></td>
-</tr>
-<tr>
 	<td>verifyTitle</td>
 	<td>${ldap_test_groupName}</td>
 	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#backend_section_5 .sq-backend-section-table-inner .sq-backend-row:nth-child(3) &gt; td.sq-backend-field</td>
+	<td>member (* values)</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#backend_section_5 .sq-backend-section-table-inner .sq-backend-row:nth-child(2) &gt; td.sq-backend-data</td>
+	<td>${ldap_test_groupName}</td>
 </tr>
 <tr>
 	<td>selectFrame</td>

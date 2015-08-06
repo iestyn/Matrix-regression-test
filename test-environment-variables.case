@@ -13,8 +13,9 @@
 <!--################-->
 <!--TEST SUITE VARIABLES-->
 <!---->
-<!--Variables used in the following test cases. -->
-<!--Don't put any environment specific magic numbers in here - put them in the env specific variable cases.-->
+<!--These variables are used throughout the test suit-->
+<!--* You shouldn't need to modify any of these *-->
+<!--* If you do, make sure you put any environment specific magic numbers in the env specific variable cases. *-->
 <!---->
 <!--###-->
 <tr>
@@ -96,16 +97,6 @@
 <!--###-->
 <!---->
 <!--### ldap-performance--page-function-latency-->
-<tr>
-	<td>store</td>
-	<td>On*</td>
-	<td>ldap_cache_cachingState</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>3600*</td>
-	<td>ldap_cache_cacheExpiry</td>
-</tr>
 <tr>
 	<td>store</td>
 	<td>${ldap_caching_performance_test_page_URL}</td>

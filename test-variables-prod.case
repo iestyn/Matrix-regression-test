@@ -24,6 +24,7 @@
 <!---->
 <!--###-->
 <!--### Environment specific variables and asset IDs-->
+<!--### Update these values to reflect your environment-->
 <tr>
 	<td>store</td>
 	<td>http://www.deakin.edu.au</td>
@@ -38,22 +39,6 @@
 	<td>store</td>
 	<td>crispd</td>
 	<td>business_author_username</td>
-</tr>
-<!---->
-<tr>
-	<td>store</td>
-	<td>3055</td>
-	<td>ldap_bridge_assetid</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>acg-squizadmins</td>
-	<td>ldap_test_groupName</td>
-</tr>
-<tr>
-	<td>store</td>
-	<td>${ldap_bridge_assetid}:cn=${ldap_test_groupName},ou=Accessgroups,dc=deakin,dc=edu,dc=au</td>
-	<td>ldap_test_group_assetid</td>
 </tr>
 <!---->
 <tr>
@@ -77,6 +62,31 @@
 	<td>workflow_test_page_bodycopyDivID</td>
 </tr>
 <!---->
+<tr>
+	<td>store</td>
+	<td>3055</td>
+	<td>ldap_bridge_assetid</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>acg-squizadmins</td>
+	<td>ldap_test_groupName</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${ldap_bridge_assetid}:cn=${ldap_test_groupName},ou=Accessgroups,dc=deakin,dc=edu,dc=au</td>
+	<td>ldap_test_group_assetid</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>On*</td>
+	<td>ldap_cache_cachingState</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>3600*</td>
+	<td>ldap_cache_cacheExpiry</td>
+</tr>
 <tr>
 	<td>store</td>
 	<td>${host}/site-admin/testing/workflow-and-permissions-testing/ldap-cache-testing/ldap-caching-performance-test-page</td>

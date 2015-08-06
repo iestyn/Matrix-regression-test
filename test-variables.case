@@ -18,7 +18,7 @@
 <!--### Test Environment (either prod | uat | dev )-->
 <tr>
 	<td>store</td>
-	<td>prod</td>
+	<td>dev</td>
 	<td>env_under_test</td>
 </tr>
 <!--###-->
