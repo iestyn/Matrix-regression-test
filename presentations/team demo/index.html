@@ -1,0 +1,112 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Automating tools for assuring our Digital infrastructures</title>
+
+    <meta name="description" content="Automating Regression Testing for Deakin's Digital Infrastructure" />
+    <meta name="author" content="Iestyn" />
+
+    <link href="css/redesign.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+</head>
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+    <div id="intro" class="step" data-x="-2500" data-y="0">
+        <p>Automating tools for assuring our Digital infrastructures</p>
+    </div>
+
+    <div id="willywonka" class="step" data-x="300" data-y="0">
+        <img src="images/willywonka.jpg" />
+    </div>
+
+    <div id="regression-testing" class="step slide" data-x="300" data-y="0" data-z="-2000">
+        <p>Regression testing:<br>
+        Assuring systems with web interfaces.</p>
+    </div>
+
+    <div id="testplan-intro" class="step" data-x="1500" data-y="0" data-z="-2000">
+        <img src="images/regressiontestplan.png" />
+        <p>Actual link: <a href="https://wiki.deakin.edu.au/display/DP/Test+Plan%3A+2015-04-11+-+Squiz+Matrix+Health+Check+after+system+upgrade+-+CP">this regression test plan</a>
+        </p>
+    </div>
+
+    <div id="testplan" class="step" data-x="1500" data-y="0" data-z="-2000"  data-rotate-x="90">
+        <p>This is the current Squiz Matrix test plan. It has 254 separate tests in 39 sections.</p>
+    </div>
+
+    <div id="automate" class="step" data-x="2800" data-y="0" data-z="-2000"  data-rotate-x="90">
+          <p>Automating these tests relieves the test load and accelerates the outcome.</p>
+    </div>
+
+    <div id="chuck-norris" class="step" data-x="2800" data-y="0" data-z="-2000"  data-rotate-x="0">
+        <img src="images/chucknorris.jpg" />
+    </div>
+
+    <div id="seleniumide" class="step slide" data-x="2800" data-y="1000" data-z="-2000">
+        <p>Selenium IDE:<br>
+          Tests a web page as the user sees it.
+        </p>
+    </div>
+
+    <div id="goal" class="step" data-x="8300" data-y="1000" data-z="2800">
+        <p>Creating tests</p>
+    </div>
+
+    <div id="goal1" class="step" data-x="8300" data-y="1000" data-z="2800">
+        <p>1. Use idempotent tests. </p>
+    </div>
+
+    <div id="goal2" class="step" data-x="8300" data-y="1000" data-z="2800">
+        <p>2. Tests refer back to the test plan.</p>
+    </div>
+
+    <div id="goal3" class="step" data-x="8300" data-y="1000" data-z="2800">
+        <p>3. Use direct identifiers. Be specific. Slow it down.</p>
+    </div>
+
+    <div id="goal4" class="step" data-x="8300" data-y="1000" data-z="2800">
+        <p>4. Watch for AJAX operations.</p>
+    </div>
+
+    <div id="goal5" class="step" data-x="8300" data-y="1000" data-z="2800">
+        <p>5. Parameterise where possible.</p>
+    </div>
+
+    <div id="forest" class="step slide" data-x="0" data-y="-9000" data-z="-6000"   data-rotate-x="90" >
+        <p>“Just because you’ve counted all the trees doesn’t mean you’ve seen the forest.” – Anonymous</p>
+    </div>
+
+    <div id="continuous-delivery-roadmap" class="step slide" data-x="0" data-y="-3000" data-z="-2000">
+        <p>Roadmap for continuous delivery.</p>
+    </div>
+
+    <div id="beerguy" class="step" data-x="0" data-y="-4000" data-z="-2000"  data-rotate-x="0">
+        <img src="images/beerguy.png" />
+    </div>
+</div>
+
+<script>
+if ("ontouchstart" in document.documentElement) {
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
