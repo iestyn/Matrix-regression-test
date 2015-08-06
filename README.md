@@ -16,9 +16,9 @@ Conventions
 
 File naming convention
 ----------------------
-Suite files end in .suite
-Test case files end in .case
-Test case names begin with the test plan section, a double dash, then the name of the test
+* Suite files end in .suite
+* Test case files end in .case
+* Test case names begin with the test plan section, a double dash, then the name of the test. 
 eg: test-section--test-name.case
 
 Test writing conventions
