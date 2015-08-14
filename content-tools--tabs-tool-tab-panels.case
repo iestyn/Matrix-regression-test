@@ -193,6 +193,43 @@
 	<td>${newTabAssetID}</td>
 </tr>
 <!---->
+<!--Hack to prepare selenium to be able to click delete buttons-->
+<tr>
+	<td>open</td>
+	<td>${content_tools_basic_test_pageAssetURL}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${content_tools_basic_test_pageAssetURL}/_edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//a[@id=&quot;ees_screenMenucontentPageStandard&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<!---->
 <!--Delete the tab-->
 <tr>
 	<td>waitForVisible</td>

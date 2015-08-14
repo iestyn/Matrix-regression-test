@@ -83,6 +83,12 @@
 <!---->
 <tr>
 	<td>store</td>
+	<td>101</td>
+	<td>metadata_schema_list_parent_folder</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
 	<td>${host}/site-admin/testing/workflow-and-permissions-testing/workflow-test-page</td>
 	<td>workflow_test_page_URL</td>
 </tr>

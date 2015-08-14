@@ -105,6 +105,12 @@
 <!---->
 <tr>
 	<td>store</td>
+	<td>101</td>
+	<td>metadata_schema_list_parent_folder</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
 	<td>${host}/site-admin/testing/workflow-and-permissions-testing/ldap-cache-testing/squiz-matrix-access-groups</td>
 	<td>squiz_matrix_access_groups_page_URL</td>
 </tr>

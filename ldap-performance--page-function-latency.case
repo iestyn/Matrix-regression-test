@@ -294,7 +294,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p</td>
+	<td>css=#ees_runningWorkflows &gt; p</td>
 	<td>Not currently in workflow.</td>
 </tr>
 <tr>

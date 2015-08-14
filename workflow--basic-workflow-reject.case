@@ -55,6 +55,11 @@
 	<td>id=sq-menu-tab-my_space</td>
 	<td>My Account</td>
 </tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/logout_and_resume.png')]</td>
+	<td>My Account</td>
+</tr>
 <!---->
 <!--Open editor-->
 <tr>
@@ -204,7 +209,7 @@
 </tr>
 <tr>
 	<td>waitForText</td>
-	<td>css=p</td>
+	<td>css=#ees_runningWorkflows &gt; p</td>
 	<td>Not currently in workflow.</td>
 </tr>
 <!---->

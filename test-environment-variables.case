@@ -126,6 +126,18 @@
 	<td>ldap_cache_lookup_testAssetUrl</td>
 </tr>
 <!---->
+<!--### metadata--schemas-->
+<tr>
+	<td>store</td>
+	<td>${admin_ui_url}?assetid=${metadata_schema_list_parent_folder}&amp;SQ_BACKEND_PAGE=main&amp;backend_section=am&amp;am_section=edit_asset&amp;asset_ei_screen=linking</td>
+	<td>metadata_schema_list_folder</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${host}/life-at-deakin/services-and-facilities</td>
+	<td>services_facilities_page</td>
+</tr>
+<!---->
 <!--### basic-content-authoring-->
 <tr>
 	<td>store</td>
