@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>metadata--services-facilities-schema</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">metadata--services-facilities-schema</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: Metadata Schemas - Services and Facilities-->
+<!--TEST CASE: Tests the services and facilities metadata driven functions-->
+<!--TEST IDs: MSF01-->
+<!---->
+<!--################-->
+<!---->
+<tr>
+	<td>open</td>
+	<td>${services_facilities_page}</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: MSF01-->
+<!--Check the filtering works-->
+<tr>
+	<td>click</td>
+	<td>link=Food and hospitality</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Food, cafes, hospitality @ Burwood</td>
+	<td>Food, cafes, hospitality @ Burwood</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=filter-campus</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Food and hospitality</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>link=Food, cafes, hospitality @ Burwood</td>
+	<td>Food, cafes, hospitality @ Burwood</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=filter-campus</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Food and hospitality</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>link=Food, cafes, hospitality @ Burwood</td>
+	<td>Food, cafes, hospitality @ Burwood</td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

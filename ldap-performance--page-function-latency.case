@@ -101,6 +101,11 @@
 	<td>id=sq-menu-tab-my_space</td>
 	<td>My Account</td>
 </tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/logout_and_resume.png')]</td>
+	<td>My Account</td>
+</tr>
 <!---->
 <!--# TEST ID: LC02-1-->
 <!--Open editor-->

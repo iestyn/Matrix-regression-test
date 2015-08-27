@@ -52,6 +52,23 @@
 	<td>Ingestable</td>
 </tr>
 <!---->
+<!--Log out-->
+<tr>
+	<td>open</td>
+	<td>${admin_ui_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/logout_white.png')]</td>
+	<td>﻿﻿</td>
+</tr>
+<!---->
 <!--# TEST ID: W01-->
 <!--Check watson-sitemap-->
 <tr>
