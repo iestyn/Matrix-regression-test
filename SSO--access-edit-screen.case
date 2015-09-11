@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>SSO--access-edit-screen</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">SSO--access-edit-screen</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: SSO shibboleth login screens-->
+<!--TEST CASE: Tests that the SSO login screen is available to any _edit access-->
+<!--TEST IDs: SSO2-->
+<!---->
+<!--# Prequisite: need to be logged out to do this test-->
+<!---->
+<!--################-->
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: SS02-->
+<!--### Access the edit UI-->
+<tr>
+	<td>open</td>
+	<td>${basic_features_test_pageEditScreen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1</td>
+	<td>Deakin Single Sign On</td>
+</tr>
+<!---->
+<!--### Now access the edit UI again now we're logged in-->
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${ldap_cache_testAssetUrl}/_edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1</td>
+	<td>Deakin Single Sign On</td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

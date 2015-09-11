@@ -13,6 +13,10 @@
 <tr><td><a href="test-variables-uat.case">test-variables-uat</a></td></tr>
 <tr><td><a href="test-variables-prod.case">test-variables-prod</a></td></tr>
 <tr><td><a href="test-environment-variables.case">test-variables</a></td></tr>
+<tr><td><a href="SSO--access-admin-screen.case">SSO--access-admin-screen</a></td></tr>
+<tr><td><a href="SSO--access-edit-screen.case">SSO--access-edit-screen</a></td></tr>
+<tr><td><a href="SSO--access-restricted-assets.case">SSO--access-restricted-assets</a></td></tr>
+<tr><td><a href="SSO-login.case">SSO--login</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--ldap-integration.case">ldap-user-groups-and-permissions--LDAP-integration</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--ui-restrictions-regular-user.case">ldap-user-groups-and-permissions--ui-restrictions-regular-user</a></td></tr>
 <tr><td><a href="ldap-user-groups-and-permissions--asset-permissions.case">ldap-user-groups-and-permissions--asset-permissions</a></td></tr>

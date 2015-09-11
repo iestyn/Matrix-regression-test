@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>SSO--access-admin-screen</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">SSO--access-admin-screen</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: SSO shibboleth login screens-->
+<!--TEST CASE: Tests that the regular login screen is available to _admin logins-->
+<!--TEST IDs: SSO1-->
+<!---->
+<!--# Prequisite: need to be logged out to do this test-->
+<!---->
+<!--################-->
+<!---->
+<!--# TEST ID: SS01 -->
+<!--### Access the admin UI-->
+<tr>
+	<td>open</td>
+	<td>${basic_content_authoring_editScreen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=p.sq-login-message</td>
+	<td></td>
+</tr>
+<!---->
+<!--### Now access the admin UI - URL 2-->
+<tr>
+	<td>open</td>
+	<td>${ldap_cache_testAssetUrl}/_admin</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=p.sq-login-message</td>
+	<td></td>
+</tr>
+<!---->
+<!--### Now access the admin UI - URL 3-->
+<tr>
+	<td>open</td>
+	<td>${admin_ui_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=p.sq-login-message</td>
+	<td></td>
+</tr>
+<!---->
+<!--Test complete-->
+<!---->
+</tbody></table>
+</body>
+</html>

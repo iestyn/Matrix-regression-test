@@ -313,37 +313,6 @@
 </tr>
 <!--###-->
 <!---->
-<!--### Now make sure you're logged in before doing any tests-->
-<tr>
-	<td>open</td>
-	<td>${basic_content_authoring_editScreen}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>${basic_features_test_pageEditScreen}</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>waitForNotVisible</td>
-	<td>css=img[alt=&quot;Loading&quot;]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>open</td>
-	<td>http://www.google.com</td>
-	<td></td>
-</tr>
 <!---->
 </tbody></table>
 </body>

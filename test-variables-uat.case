@@ -42,6 +42,22 @@
 <!---->
 <tr>
 	<td>store</td>
+	<td>${host}/site-admin/testing/workflow-and-permissions-testing/authentication-testing/D322-commerce-law.pdf</td>
+	<td>sso_restricted_asset_pdf</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${host}/site-admin/testing/workflow-and-permissions-testing/authentication-testing/2015-Research-Report-No-1.doc</td>
+	<td>sso_restricted_asset_doc</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${host}/site-admin/testing/workflow-and-permissions-testing/authentication-testing/login-test-page</td>
+	<td>sso_restricted_asset_page</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
 	<td>3055</td>
 	<td>ldap_bridge_assetid</td>
 </tr>

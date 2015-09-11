@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>SSO--login</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">SSO--login</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: SSO shibboleth login -->
+<!--TEST CASE: Tests that login functionality succeeds-->
+<!--TEST IDs: SSO4-->
+<!---->
+<!--################-->
+<!---->
+<!--# TEST ID: SS04-->
+<!--### Now make sure you're logged in before doing any tests-->
+<tr>
+	<td>open</td>
+	<td>${basic_content_authoring_editScreen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>${basic_features_test_pageEditScreen}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForNotVisible</td>
+	<td>css=img[alt=&quot;Loading&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>http://www.google.com</td>
+	<td></td>
+</tr>
+<!---->
+<!--Test complete-->
+
+</tbody></table>
+</body>
+</html>
