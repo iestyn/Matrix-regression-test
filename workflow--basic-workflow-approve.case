@@ -177,8 +177,7 @@
 	<td></td>
 </tr>
 <!---->
-<!--# TEST ID: WF04-->
-<!--Check able to approve -->
+<!--Go to approval screen-->
 <tr>
 	<td>open</td>
 	<td>${workflow_permissions_testPageURL}/_edit#mode=edit&amp;screen=workflow</td>
@@ -194,6 +193,22 @@
 	<td>css=img[alt=&quot;Loading&quot;]</td>
 	<td></td>
 </tr>
+<!---->
+<!--# TEST ID: -->
+<!--Check the user error message is NOT present on workflow screen-->
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>css=p.warningMessage.clearfix.alignLeft</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotText</td>
+	<td>css=p.warningMessage.clearfix.alignLeft</td>
+	<td>Unknown or deleted user</td>
+</tr>
+<!---->
+<!--# TEST ID: WF04-->
+<!--Now check able to approve -->
 <tr>
 	<td>select</td>
 	<td>id=page_standard_${workflow_permissions_test_pageAssetID}_change_status</td>

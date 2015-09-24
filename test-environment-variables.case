@@ -48,6 +48,11 @@
 	<td>${business_author_username}</td>
 	<td>ldap_integration_authorUsername</td>
 </tr>
+<tr>
+	<td>store</td>
+	<td>${student_username}</td>
+	<td>ldap_integration_studentUsername</td>
+</tr>
 <!--###-->
 <!---->
 <!--### ldap-user-groups-and-permissions--asset-permissions-->

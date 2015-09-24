@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://www-cms-uat.deakin.edu.au" />
+<title>SSO--access-restricted-assets-loggedin</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">SSO--access-restricted-assets-loggedin</td></tr>
+</thead><tbody>
+<!--################-->
+<!--CATEGORY: SSO shibboleth login -->
+<!--TEST CASE: Tests that logged in users have correct access-->
+<!--TEST IDs: SSO5, SSO6, SSO7-->
+<!---->
+<!--################-->
+<!---->
+<!--Impersonate a student user-->
+<tr>
+	<td>open</td>
+	<td>${admin_ui_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>sq_header</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user</td>
+	<td>${ldap_integration_studentUsername}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=input.sq-btn-blue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/logout_and_resume.png')]</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: SS05-->
+<!--### Access a restricted page-->
+<tr>
+	<td>open</td>
+	<td>${sso_restricted_asset_page}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1</td>
+	<td>Access Denied</td>
+</tr>
+<!---->
+<!--Stop impersonating regular user-->
+<tr>
+	<td>open</td>
+	<td>${admin_ui_url}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/logout_and_resume.png')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>id=sq-menu-tab-my_space</td>
+	<td>My Account</td>
+</tr>
+<tr>
+	<td>selectFrame</td>
+	<td>relative=top</td>
+	<td></td>
+</tr>
+<!---->
+<!--# TEST ID: SS05-->
+<!--### Access the restricted page again as a staff member-->
+<tr>
+	<td>open</td>
+	<td>${sso_restricted_asset_page}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1</td>
+	<td>Login Test Page</td>
+</tr>
+<!---->
+<!---->
+<!--Test complete-->
+</tbody></table>
+</body>
+</html>
