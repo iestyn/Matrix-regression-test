@@ -20,22 +20,29 @@
 <!---->
 <tr>
 	<td>store</td>
-	<td>73273</td>
+	<td>*&lt;ingest&gt;yes&lt;/ingest&gt;*</td>
 	<td>xml_test_string</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>&quot;assetid&quot;:&quot;73273&quot; *</td>
+	<td>*&quot;ingest&quot;:&quot;yes&quot;,*</td>
 	<td>json_test_string</td>
 </tr>
 <tr>
 	<td>store</td>
-	<td>assetid,url,last mod,last pub,ingestable,status*</td>
+	<td>*,yes,*</td>
 	<td>csv_test_string</td>
 </tr>
+<!---->
+<!--Make sure logged in before the first test-->
 <tr>
-	<td>store</td>
+	<td>open</td>
+	<td>${watson_ingest_metadataTestPageURL}</td>
 	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
 	<td></td>
 </tr>
 <!---->
@@ -114,18 +121,12 @@
 	<td>new Date().getTime() - storedVars['startTime']</td>
 	<td>jsonPageLoadTime</td>
 </tr>
+<!--# TEST ID: W05-->
+<!--Check data is returned, also checks watson-sitemap has some ingestable content-->
 <tr>
 	<td>verifyText</td>
 	<td>//*</td>
 	<td>${json_test_string}</td>
-</tr>
-<!---->
-<!--# TEST ID: W05-->
-<!--Check watson-sitemap data integrity-->
-<tr>
-	<td>verifyText</td>
-	<td>//*</td>
-	<td>&quot;ingest&quot;:&quot;yes&quot;</td>
 </tr>
 <!---->
 <!--# TEST ID: W04-->
