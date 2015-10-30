@@ -218,6 +218,13 @@
 	<td>${stay_informed_assetID}</td>
 	<td>basic_editing_stayInformedAssetID</td>
 </tr>
+<!---->
+<!--### forms--conditional-fields-->
+<tr>
+	<td>store</td>
+	<td>${generic_form_pageURL}</td>
+	<td>form_test_pageURL</td>
+</tr>
 <!--###-->
 <!---->
 <!--### easy-edit-suite--create-new-page-->

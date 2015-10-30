@@ -69,6 +69,12 @@
 <!---->
 <tr>
 	<td>store</td>
+	<td>${host}/site-admin/testing/workflow-and-permissions-testing/testing-form-dependant</td>
+	<td>generic_form_pageURL</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
 	<td>${host}/site-admin/testing/workflow-and-permissions-testing/authentication-testing/D322-commerce-law.pdf</td>
 	<td>sso_restricted_asset_pdf</td>
 </tr>

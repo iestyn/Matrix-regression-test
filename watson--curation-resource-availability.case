@@ -30,6 +30,11 @@
 </tr>
 <tr>
 	<td>store</td>
+	<td>*&quot;ingest&quot;:&quot;yes&quot;,&quot;status&quot;:&quot;archived&quot;*</td>
+	<td>json_archived_test_string</td>
+</tr>
+<tr>
+	<td>store</td>
 	<td>*,yes,*</td>
 	<td>csv_test_string</td>
 </tr>
@@ -51,6 +56,11 @@
 <tr>
 	<td>open</td>
 	<td>${watson_ingest_metadataTestPageURL}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//img[contains(@src,'/__lib/web/images/icons/header/login_as_white.png')]</td>
 	<td></td>
 </tr>
 <tr>
@@ -123,6 +133,12 @@
 </tr>
 <!--# TEST ID: W05-->
 <!--Check data is returned, also checks watson-sitemap has some ingestable content-->
+<tr>
+	<td>verifyText</td>
+	<td>//*</td>
+	<td>${json_test_string}</td>
+</tr>
+<!--Check data is there are ingestable, but archived, assets in the results-->
 <tr>
 	<td>verifyText</td>
 	<td>//*</td>

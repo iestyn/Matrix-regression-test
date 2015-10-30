@@ -131,6 +131,12 @@
 <!---->
 <tr>
 	<td>store</td>
+	<td>${host}/site-admin/testing/workflow-and-permissions-testing/testing-form-dependant</td>
+	<td>generic_form_pageURL</td>
+</tr>
+<!---->
+<tr>
+	<td>store</td>
 	<td>${host}/site-admin/testing/workflow-and-permissions-testing/deleted-user-warning-test-page</td>
 	<td>workflow_user_error_testPageURL</td>
 </tr>

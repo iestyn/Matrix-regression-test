@@ -35,6 +35,7 @@
 <tr><td><a href="easy-edit-suite--basic-editing-regular-user.case">easy-edit-suite--basic-editing-regular-user</a></td></tr>
 <tr><td><a href="easy-edit-suite--create-new-page.case">easy-edit-suite--create-new-page</a></td></tr>
 <tr><td><a href="easy-edit-suite--create-new-page-regular-user.case">easy-edit-suite--create-new-page-regular-user</a></td></tr>
+<tr><td><a href="forms--conditional-fields.case">forms--conditional-fields</a></td></tr>
 <tr><td><a href="content-tools--add-content-tool-button.case">content-tools--add-content-tool-button</a></td></tr>
 <tr><td><a href="content-tools--lead-text-tool.case">content-tools--lead-text-tool</a></td></tr>
 <tr><td><a href="content-tools--content-section-tool.case">content-tools--content-section-tool</a></td></tr>
